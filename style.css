@@ -23,6 +23,9 @@ nav ul li a {
     text-decoration: none;
     text-align: center; /* Added property */
 }
+#about{
+    margin-top: 200px;
+}
 
 img {
     width: 200px; 
