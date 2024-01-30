@@ -21,24 +21,18 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    text-align: center; /* Added property */
-}
-#about{
-    margin-top: 200px;
+    text-align: center; /* Align text to the center */
 }
 
-img {
-    width: 200px; 
-    height: auto; 
-    border-radius: 50%;
-    margin-bottom: 20px;
+#about {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Three columns with 1:2:1 ratio */
+    gap: 20px; /* Adjust the gap between columns */
 }
 
-.div-left, .div-right {
-    margin-right: 35%;
-    margin-left:35%;
+.div-left {
+    text-align: left;
 }
-
 
 .div-center {
     display: flex;
@@ -47,7 +41,97 @@ img {
     text-align: center;
 }
 
-#about .div-center ul li {
-    margin: 0 10px;
-    list-style-type: none;
+.div-right {
+    text-align: right;
 }
+
+.animated-content {
+    text-align: left; 
+}
+
+.animated-content img {
+    max-width: 100%; /* Make sure the image doesn't exceed the container width */
+}
+
+#about img {
+    width: 200px; 
+    height: auto; 
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/*--------------*/
+#portfolio{
+    padding: 50px 0;
+}
+.work-list{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)) ;
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s ;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    border-radius:10px ;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight:500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color:#ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background:#fff ;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition:background 0.5s ;
+}
+.btn:hover{
+    background: #ff004f;
+}
+
