@@ -61,31 +61,39 @@ nav ul li a {
 }
 
 /*--------------*/
-#portfolio{
-    padding: 50px 0;
+#portfolio {
+    grid-template-columns: 1fr 2fr 1fr; /* Three columns with 1:2:1 ratio */
+    gap: 20px; /* Adjust the gap between columns */
+    margin: 0 auto; /* Center the grid on the page */
+    max-width: 1200px; /* Optionally set a max-width for the centering effect */
 }
-.work-list{
+
+.work-list {
     display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)) ;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
-    margin-top: 50px;
+    margin: 0 auto; /* Center the work-list within the container */
+    max-width: 800px; /* Set a max-width for the work-list */
 }
-.work{
+
+.work {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
 }
-.work img{
+
+.work img {
     width: 100%;
     border-radius: 10px;
     display: block;
-    transition: transform 0.5s ;
+    transition: transform 0.5s;
 }
-.layer{
+
+.layer {
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
-    border-radius:10px ;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+    border-radius: 10px;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -98,29 +106,35 @@ nav ul li a {
     text-align: center;
     transition: height 0.5s;
 }
-.layer h3{
-    font-weight:500;
+
+.layer h3 {
+    font-weight: 500;
     margin-bottom: 20px;
 }
-.layer a{
+
+.layer a {
     margin-top: 20px;
-    color:#ff004f;
+    color: #ff004f;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
-    background:#fff ;
+    background: #fff;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     text-align: center;
 }
-.work:hover img{
+
+.work:hover img {
     transform: scale(1.1);
 }
-.work:hover .layer{
+
+.work:hover .layer {
     height: 100%;
 }
-.btn{
+
+.btn {
+    grid-column: span 3; /* Make the button span across all three columns */
     display: block;
     margin: 50px auto;
     width: fit-content;
@@ -129,9 +143,11 @@ nav ul li a {
     border-radius: 6px;
     text-decoration: none;
     color: #fff;
-    transition:background 0.5s ;
+    transition: background 0.5s;
 }
-.btn:hover{
+
+.btn:hover {
     background: #ff004f;
 }
+
 
