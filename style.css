@@ -150,4 +150,61 @@ nav ul li a {
     background: #ff004f;
 }
 
+#podcast {
+    padding: 50px 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Three columns with 1:2:1 ratio */
+    gap: 20px; /* Adjust the gap between columns */
+    margin: 0 auto; /* Center the grid on the page */
+    max-width: 1200px; /* Optionally set a max-width for the centering effect */
+}
+
+.grid-item {
+    height: 100%; /* Make grid items take up full height */
+}
+
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.podcast-item {
+    max-width: 400px; /* Set max-width for the podcast items */
+    margin: 0 auto; /* Center the items within the center grid item */
+}
+
+.podcast-item img {
+    max-width: 100%;
+    border-radius: 10px; /* Add border-radius for image */
+}
+
+.podcast-item h2 {
+    color: #333; /* Set color for heading */
+}
+
+.podcast-item p {
+    color: #666; /* Set color for paragraph text */
+}
+
+.podcast-item a {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff004f; /* Background color for the link */
+    color: #fff; /* Text color for the link */
+    text-decoration: none;
+    border-radius: 5px; /* Add border-radius for the link */
+    transition: background 0.3s;
+}
+
+.podcast-item a:hover {
+    background-color: #d4004f; /* Change background color on hover */
+}
+
 
