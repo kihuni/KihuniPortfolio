@@ -18,8 +18,8 @@
             <ul>
                 <li><a href="#about">About Kihuni</a></li>
                 <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#spotify">Exploring The Backend Show</a></li>
+                <li><a href="https://dev.to/kihuni" target="_blank" rel="noopener noreferrer">Blog</a></li>
+                <li><a href="#podcast">Exploring The Backend Show</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn"  href="https://dev.to/kihuni" target="_blank" rel="noopener noreferrer">See more</a>
+                <a class="btn"  href="https://github.com/kihuni/Hng-Task-2" target="_blank" rel="noopener noreferrer">See more</a>
             </div>
         </div>
 
@@ -114,14 +114,12 @@
                 <div class="grid-item left"></div>
                 <div class="grid-item center">
                     <div class="podcast-item">
-                        <img src="Images/pexels-cottonbro-studio-6686442.jpg" alt="">
+                        <img src="Images/Explore Backend.png" alt="">
                     </div>
                     <div class="podcast-item">
-                        <h2>Exploring The Backend Show</h2>
-                        <p>Exploring The Backend Show is a podcast that explores the backend of software development. 
-                            The show is hosted by Stephen Kihuni and features interviews with backend developers, 
-                            technical writers, and other industry experts. 
-                            The show is available on all major podcast platforms including Spotify, Apple Podcasts, and Google Podcasts.
+                        <h2>Explore Backend Show</h2>
+                        <p>Explore the Backend Show is a podcast that explores the backend of software development. 
+                            Its a solo podcast that focuses mainly on API development. If you are looking to learn more about backend development, this is the podcast for you.
                         </p>
                         <a class="btn"  href="https://podcasters.spotify.com/pod/show/stephen-kihuni" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
                     </div>
@@ -129,18 +127,55 @@
                 <div class="grid-item right"></div>
             </div>
         </div>
+        <hr class="line">
 
-        
-<!-----------contact--------->
-        <h3>📫 Let's Connect:</h3>
+<!-----------Contact----------->
 
+    <div id="contact" class="container">
+       <div class="row">
+        <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-solid fa-paper-plane"></i> stephenkihuni55@gmail.com</p>
+            <p><i class="fa-solid fa-phone-flip"></i> 0717788354</p>
+            <div class="social-icons">
+                <a href="https://github.com/kihuni"><i class="fa-brands fa-github"></i></a>
+                <a href="https://twitter.com/SKihuni"><i class="fa-solid fa-x"></i></i></a>
+                <a href=https://www.linkedin.com/in/stephen-kihuni-8b14a3250/><i class="fa-brands fa-linkedin"></i></a>
+                <a href=https://podcasters.spotify.com/pod/show/stephen-kihuni><i class="fa-brands fa-spotify"></i></a>
+            </div>
+        </div>
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required id="">
+                <input type="text" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" id="" cols="" rows="6" placeholder="Your Message"></textarea>
+                <button class="btn btn2" type="submit">Submit</button>
+            </form>
+            <span id="msg"></span>
+    
+        </div>
+       </div> 
+    </div>
 
-        <p>🌐 Let's connect and explore the endless possibilities of technology together!</p>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/stephen-kihuni-9b1b3b1b0/">LinkedIn</a></li>
-            <li><a href="https://twitter.com/StephenKihuni">Twitter</a></li>
-            <li><a href="https://github.com./StephenKihuni">GitHub</a></li> 
-        </ul>
   </main>
+  <script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzRghEyCpf-uoYUpodIt8Ta_NX2QM8SiS3FVDP1aLuuWMZE8SMknJKNQYXEkhCT7aDxfg/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById('msg')
+  
+  form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST',mode: 'cors', body: new FormData(form)})
+          .then(response => {
+              msg.innerHTML = "Message sent successfully"
+              setTimeout(function(){
+                  msg.innerHTML = ""
+              },5000)
+              form.reset()
+          })
+          .catch(error => console.error('Error!', error.message))
+  })
 
+  </script>
 </body>
+</html>
