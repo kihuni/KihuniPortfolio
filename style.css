@@ -1,13 +1,13 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px; 
-    background-color: black;
+    background-color: 0b132b;
 }
 
 
 /*------Nav section--------*/
 header {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(20, 20, 20, 0.2);
     position: fixed;
     top: 0;
     width: 100%;
@@ -48,6 +48,41 @@ nav ul li a:hover {
 header.scrolled {
     background-color: rgba(0, 0, 0, 0.9);
 }
+
+.tech-stack {
+    margin-top: 20px;
+}
+
+.tech-stack h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tech-stack ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tech-stack li {
+    background-color:#96BDD9; 
+    border: 1px solid #7E6B8F; 
+    border-radius: 8px; 
+    margin-bottom: 10px;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.tech-stack li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+.tech-stack li:last-child {
+    margin-bottom: 0; 
+}
+
+
 
 @media (max-width: 767px) {
     nav {
@@ -216,7 +251,7 @@ header.scrolled {
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
-    color: #fff;
+    color: #333;
     transition: background 0.5s;
 }
 
@@ -253,6 +288,7 @@ header.scrolled {
     align-items: center;
     text-align: center;
     border: #333 solid 1px;
+    border-radius: 2px;
     padding:20px;
 }
 
