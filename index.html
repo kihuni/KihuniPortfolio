@@ -183,15 +183,21 @@
       }
     }
   
+    document.addEventListener('DOMContentLoaded', function () {
+      // Hide the cancel icon on page load
+      document.querySelector('.cancel-icon').style.display = 'none';
+    });
+  
     document.addEventListener('click', function(event) {
       const nav = document.querySelector('nav');
       const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+      const cancelIcon = document.querySelector('.cancel-icon');
   
       if (isMenuOpen && !nav.contains(event.target) && event.target !== mobileMenuIcon) {
         isMenuOpen = false;
         nav.style.display = 'none';
         mobileMenuIcon.style.display = 'block';
-        document.querySelector('.cancel-icon').style.display = 'none';
+        cancelIcon.style.display = 'none';
       }
     });
   </script>
