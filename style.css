@@ -195,21 +195,20 @@ header.scrolled {
 /*------blog section--------*/
 #portfolio {
     position: relative;
-    margin: 0 auto; 
-    max-width: 1200px; 
+    margin: 0 auto;
+    max-width: 1200px;
     margin-top: 200px;
     padding: 5%;
 }
 
 .work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
-    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Updated to 100% for mobile view */
+    grid-gap: 20px; /* Adjusted grid-gap for better spacing on smaller screens */
     border: #333 solid 1px;
-    margin: 0; 
-    padding: 20px; 
+    margin: 0;
+    padding: 20px;
 }
-
 
 .work {
     border-radius: 10px;
@@ -237,25 +236,25 @@ header.scrolled {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 20px; /* Adjusted padding for smaller screens */
     text-align: center;
     transition: height 0.5s;
 }
 
 .layer h3 {
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reduced margin for smaller screens */
 }
 
 .layer a {
-    margin-top: 20px;
+    margin-top: 10px; /* Reduced margin for smaller screens */
     color: #ff004f;
     text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
+    font-size: 14px; /* Adjusted font size for smaller screens */
+    line-height: 40px; /* Adjusted line height for smaller screens */
     background: #fff;
-    width: 60px;
-    height: 60px;
+    width: 40px; /* Adjusted width for smaller screens */
+    height: 40px; /* Adjusted height for smaller screens */
     border-radius: 50%;
     text-align: center;
 }
@@ -269,12 +268,12 @@ header.scrolled {
 }
 
 .btn {
-    grid-column: span 3; 
+    grid-column: span 3;
     display: block;
-    margin: 50px auto;
+    margin: 20px auto; /* Adjusted margin for smaller screens */
     width: fit-content;
     border: 1px solid #ff004f;
-    padding: 14px 50px;
+    padding: 10px 30px; /* Adjusted padding for smaller screens */
     border-radius: 6px;
     text-decoration: none;
     color: #333;
@@ -287,15 +286,21 @@ header.scrolled {
 }
 
 /* Responsive adjustments */
-
 @media (max-width: 767px) {
     .work-list {
         grid-template-columns: 1fr;
         border: none;
+        padding: 10px; /* Adjusted padding for smaller screens */
     }
 
     .btn {
         grid-column: span 1;
+        margin: 20px auto; /* Adjusted margin for smaller screens */
+    }
+
+    #portfolio {
+        width: 100%;
+        position: relative;
     }
 }
 
