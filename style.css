@@ -291,6 +291,7 @@ header.scrolled {
         grid-template-columns: 1fr;
         border: none;
         padding: 10px; /* Adjusted padding for smaller screens */
+        justify-items: center; /* Center the grid items horizontally */
     }
 
     .btn {
@@ -301,8 +302,10 @@ header.scrolled {
     #portfolio {
         width: 100%;
         position: relative;
+        text-align: center; /* Center the content within the portfolio container */
     }
 }
+
 
 /*------podcast section--------*/
 #podcast {
