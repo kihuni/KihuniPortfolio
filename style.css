@@ -107,7 +107,7 @@ header.scrolled {
 
 #about {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr; 
+    grid-template-columns: 1fr 3fr 1fr; 
     gap: 20px; 
     margin-top: 100px;
     margin-bottom: 100px;
@@ -175,11 +175,17 @@ header.scrolled {
     }
 
     .div-left, .div-right {
-        text-align: center;
+        display: none;
     }
-
-    .div-center {
-        text-align: center;
+    .animated-content img {
+        max-width: 100%; 
+    }
+    #about h1,h3,p{
+        width: auto;
+        font-size: small;
+    }
+    .div-center{
+        border: none;
     }
 }
 
