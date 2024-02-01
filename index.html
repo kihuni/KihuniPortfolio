@@ -14,20 +14,20 @@
 
 <body>
     <header>
-        <div class="mobile-menu-icon">&#9776;</div>
-        <div class="cancel-icon">&#10006;</div>
+        <div class="mobile-menu-icon" onclick="openmenu()">&#9776;</div>
+        <div class="cancel-icon" onclick="closemenu()">&#10006;</div>
         <nav>
-            <ul id="sidemenu">
-                <li><a href="#about">About Kihuni</a></li>
-                <li><a href="#portfolio">Projects</a></li>
-                <li><a href="https://dev.to/kihuni" target="_blank" rel="noopener noreferrer">Blog</a></li>
-                <li><a href="#podcast">Exploring The Backend Show</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars hamburger-icon" id="open-menu" onclick="openmenu()"></i> 
+          <ul id="sidemenu">
+            <li><a href="#about">About Kihuni</a></li>
+            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="https://dev.to/kihuni" target="_blank" rel="noopener noreferrer">Blog</a></li>
+            <li><a href="#podcast">Exploring The Backend Show</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars hamburger-icon" id="open-menu" onclick="openmenu()"></i>
         </nav>
-    </header>
+      </header>
 
     <main>
 
@@ -164,17 +164,18 @@
   </main>
 
   <script>
-    var SideMenu = document.getElementById("sidemenu");
-    
-    function openmenu() {
-    const nav = document.querySelector('nav ul');
-    nav.style.right = '0';
-    }
+   var SideMenu = document.getElementById("sidemenu");
 
-    function closemenu() {
-        const nav = document.querySelector('nav ul');
-        nav.style.right = '-200px';
-    }
+function openmenu() {
+  const nav = document.querySelector('nav ul');
+  nav.classList.add('show');
+}
+
+function closemenu() {
+  const nav = document.querySelector('nav ul');
+  nav.classList.remove('show');
+}
+
 </script>
 
 <script>
