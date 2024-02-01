@@ -12,6 +12,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center; 
   }
 
   .mobile-menu-icon,
@@ -28,12 +29,12 @@ body {
 
   .cancel-icon {
     order: 2;
-    transform: rotate(0deg); /* Initial rotation for the hamburger icon */
+    transform: rotate(0deg); 
   }
 
   nav {
     display: flex;
-    justify-content: center; /* Center the menu horizontally */
+    justify-content: center; 
   }
 
   #sidemenu {
@@ -41,6 +42,7 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: center;
   }
 
   #sidemenu li {
@@ -50,6 +52,7 @@ body {
   #sidemenu a {
     text-decoration: none;
     color: #fff;
+    font-size: 18px;
   }
 
   #sidemenu a:hover {
@@ -207,7 +210,7 @@ body {
     }
     #about h1,h3,p{
         width: auto;
-        font-size: small;
+        font-size: 16px;
     }
     .div-center{
         border: none;
