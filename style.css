@@ -292,12 +292,14 @@ header.scrolled {
         border: none;
         padding: 10px; 
         justify-items: center; 
+        margin-right: 50px;
     }
 
     .btn {
         grid-column: span 1;
         margin: 20px auto; 
     }
+
 
     #portfolio {
         width: 100%;
