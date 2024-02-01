@@ -17,13 +17,15 @@
         <div class="mobile-menu-icon">&#9776;</div>
         <div class="cancel-icon">&#10006;</div>
         <nav>
-            <ul>
+            <ul id="sidemenu">
                 <li><a href="#about">About Kihuni</a></li>
                 <li><a href="#portfolio">Projects</a></li>
                 <li><a href="https://dev.to/kihuni" target="_blank" rel="noopener noreferrer">Blog</a></li>
                 <li><a href="#podcast">Exploring The Backend Show</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
             </ul>
+            <i class="fa-solid fa-bars hamburger-icon" id="open-menu" onclick="openmenu()"></i> 
         </nav>
     </header>
 
@@ -60,6 +62,8 @@
                        <li>Python, Django</li>
                        <li>Database: SQL, ORM</li>
                       <li>Git</li>
+                      <li>CSS</li>
+                      <li>HTML</li>
                  </ul>
                </div>
 
@@ -159,29 +163,20 @@
 
   </main>
 
-   <script>
-   document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
-    const cancelIcon = document.querySelector('.cancel-icon');
-    const navList = document.querySelector('nav ul');
+  <script>
+    var SideMenu = document.getElementById("sidemenu");
+    
+    function openmenu() {
+    const nav = document.querySelector('nav ul');
+    nav.style.right = '0';
+    }
 
-    mobileMenuIcon.addEventListener('click', function () {
-        navList.classList.toggle('show');
-        mobileMenuIcon.classList.toggle('show');
-        cancelIcon.classList.toggle('show');
-    });
-
-    cancelIcon.addEventListener('click', function () {
-        navList.classList.remove('show');
-        mobileMenuIcon.classList.remove('show');
-        cancelIcon.classList.remove('show');
-    });
-
-    // Add this line to add the 'show' class initially
-    navList.classList.add('show');
-});
-
+    function closemenu() {
+        const nav = document.querySelector('nav ul');
+        nav.style.right = '-200px';
+    }
 </script>
+
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzRghEyCpf-uoYUpodIt8Ta_NX2QM8SiS3FVDP1aLuuWMZE8SMknJKNQYXEkhCT7aDxfg/exec'
       const form = document.forms['submit-to-google-sheet']
