@@ -305,6 +305,9 @@ header.scrolled {
         padding: 0; 
         text-align: center;
     }
+    .work{
+        width: 100%;
+    }
 }
 
 
