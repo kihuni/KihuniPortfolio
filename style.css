@@ -285,7 +285,7 @@ header.scrolled {
     background: #ff004f;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 767px) {
     .work-list {
         grid-template-columns: 1fr;
@@ -364,7 +364,7 @@ header.scrolled {
 
 
 
-/* Responsive adjustments */
+
 @media (max-width: 767px) {
     #podcast {
         flex-direction: column;
@@ -382,11 +382,12 @@ header.scrolled {
     .left, .right {
         text-align: center;
     }
+    .center{
+        border: none;
+    }
 }
 
 /*------contact section--------*/
-
-/* Add these styles to your existing CSS */
 
 #contact {
     margin-top: 200px;
@@ -485,4 +486,67 @@ input,textarea{
 #msg {
     color: #333;
     font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    #contact {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center; /* Center items horizontally on mobile */
+    }
+
+    .contact-left,
+    .contact-right {
+        flex: 1;
+        margin: 0;
+        padding: 20px;
+        border: none; /* Remove borders on mobile */
+        border-radius: 10px;
+        margin-bottom: 20px;
+        text-align: center; /* Center text in the contact sections on mobile */
+    }
+
+    .sub-title {
+        font-size: 24px; /* Adjusted font size for smaller screens */
+        margin-bottom: 15px;
+    }
+
+    .contact-left p {
+        font-size: 16px; /* Adjusted font size for smaller screens */
+        margin-bottom: 10px;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+    }
+
+    .contact-right form {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center form items horizontally on mobile */
+    }
+
+    .contact-right input,
+    .contact-right textarea {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%; /* Make input and textarea full width on mobile */
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+
+    .contact-right button {
+        padding: 10px 20px;
+        font-size: 16px; /* Adjusted font size for smaller screens */
+    }
 }
