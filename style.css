@@ -5,6 +5,7 @@ body {
     margin: 0;
   }
   
+
   header {
     background-color: #333;
     color: #fff;
@@ -18,7 +19,17 @@ body {
   .cancel-icon {
     font-size: 20px;
     cursor: pointer;
-    display: none; /* Initially hide icons on larger screens */
+    display: none;
+    transition: transform 0.3s ease; /* Added transition property */
+  }
+  
+  .mobile-menu-icon {
+    order: 1;
+  }
+  
+  .cancel-icon {
+    order: 2;
+    transform: rotate(180deg); /* Initial rotation for the x icon */
   }
   
   nav {
@@ -46,17 +57,22 @@ body {
   }
   
   @media only screen and (max-width: 768px) {
+
+    .mobile-menu-icon.open {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
+      }
     .mobile-menu-icon,
     .cancel-icon {
-      display: block; /* Show icons on mobile screens */
+      display: block;
     }
   
     nav {
-      display: none; /* Hide nav on larger screens */
+      display: none;
       flex-direction: column;
       position: absolute;
       top: 60px;
-      left: 0;
+      right: 0;
       background-color: #333;
       width: 100%;
       text-align: center;

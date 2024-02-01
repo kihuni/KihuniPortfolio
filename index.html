@@ -59,9 +59,10 @@
                   <ul>
                        <li>Python, Django</li>
                        <li>Database: SQL, ORM</li>
-                      <li>Git</li>
-                      <li>CSS</li>
-                      <li>HTML</li>
+                       <li>Git and Github</li>
+                       <li>Reactjs</li>
+                       <li>CSS</li>
+                       <li>HTML</li>
                  </ul>
                </div>
 
@@ -162,13 +163,33 @@
   </main>
 
   <script>
+let isMenuOpen = false;
+
 function toggleMenu() {
   const nav = document.querySelector('nav');
-  nav.style.display = (nav.style.display === 'block' || nav.style.display === '') ? 'none' : 'block';
+  const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+
+  isMenuOpen = !isMenuOpen;
+
+  if (isMenuOpen) {
+    nav.style.display = 'block';
+    mobileMenuIcon.classList.add('open');
+  } else {
+    nav.style.display = 'none';
+    mobileMenuIcon.classList.remove('open');
+  }
 }
 
+document.addEventListener('click', function(event) {
+  const nav = document.querySelector('nav');
+  const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
 
-
+  if (isMenuOpen && !nav.contains(event.target) && event.target !== mobileMenuIcon) {
+    isMenuOpen = false;
+    nav.style.display = 'none';
+    mobileMenuIcon.classList.remove('open');
+  }
+});
 
 </script>
 
