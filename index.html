@@ -14,8 +14,8 @@
 
 <body>
     <header>
-        <div class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</div>
         <div class="cancel-icon" onclick="toggleMenu()">&#10006;</div>
+        <div class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</div>
         <nav>
           <ul id="sidemenu">
             <li><a href="#about">About Kihuni</a></li>
@@ -163,35 +163,39 @@
   </main>
 
   <script>
-let isMenuOpen = false;
-
-function toggleMenu() {
-  const nav = document.querySelector('nav');
-  const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
-
-  isMenuOpen = !isMenuOpen;
-
-  if (isMenuOpen) {
-    nav.style.display = 'block';
-    mobileMenuIcon.classList.add('open');
-  } else {
-    nav.style.display = 'none';
-    mobileMenuIcon.classList.remove('open');
-  }
-}
-
-document.addEventListener('click', function(event) {
-  const nav = document.querySelector('nav');
-  const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
-
-  if (isMenuOpen && !nav.contains(event.target) && event.target !== mobileMenuIcon) {
-    isMenuOpen = false;
-    nav.style.display = 'none';
-    mobileMenuIcon.classList.remove('open');
-  }
-});
-
-</script>
+    let isMenuOpen = false;
+  
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+      const cancelIcon = document.querySelector('.cancel-icon');
+  
+      isMenuOpen = !isMenuOpen;
+  
+      if (isMenuOpen) {
+        nav.style.display = 'flex';
+        mobileMenuIcon.style.display = 'none';
+        cancelIcon.style.display = 'block';
+      } else {
+        nav.style.display = 'none';
+        mobileMenuIcon.style.display = 'block';
+        cancelIcon.style.display = 'none';
+      }
+    }
+  
+    document.addEventListener('click', function(event) {
+      const nav = document.querySelector('nav');
+      const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+  
+      if (isMenuOpen && !nav.contains(event.target) && event.target !== mobileMenuIcon) {
+        isMenuOpen = false;
+        nav.style.display = 'none';
+        mobileMenuIcon.style.display = 'block';
+        document.querySelector('.cancel-icon').style.display = 'none';
+      }
+    });
+  </script>
+  
 
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzRghEyCpf-uoYUpodIt8Ta_NX2QM8SiS3FVDP1aLuuWMZE8SMknJKNQYXEkhCT7aDxfg/exec'
