@@ -187,6 +187,9 @@ header.scrolled {
     .div-center{
         border: none;
     }
+    .btn {
+        grid-column: span 1;
+    }
 }
 
 /*------blog section--------*/
@@ -281,6 +284,19 @@ header.scrolled {
 
 .btn:hover {
     background: #ff004f;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 767px) {
+    .work-list {
+        grid-template-columns: 1fr;
+        border: none;
+    }
+
+    .btn {
+        grid-column: span 1;
+    }
 }
 
 /*------podcast section--------*/
