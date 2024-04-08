@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+body{
+  background-color: #000000;
+}
+
+
+header {
+  color: #fff;
+  padding: 30px 0; 
+  margin: 0 29%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 200px;
+  margin: 0 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin-right: 20px;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+/* Keyframes for header animation */
+@keyframes slideIn {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Apply animation to the header */
+.animated-header {
+  animation: slideIn 2s ease forwards;
+}
+
+
+main {
+  padding: 20px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 22% 30% 30% 22%;
+}
+
+
+.grind-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; 
+  max-width: 900px;
+}
+
+.grind-profile span{
+  color:#9B4819;
+  font-weight: bold;
+}
+
+
+.styled-hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 2px solid #333; 
+  width: 100%;
+}
+
+.animated-text {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.animated-text::before {
+  content: ''; 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  border-radius: 50%; 
+  border: 2px solid #ffbf00; 
+  animation: circle 2s infinite; 
+  top: 0; 
+  z-index: -1; 
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grid-container h2 {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.grind-profile div {
+  margin-bottom: 10px; 
+  color:#fff ;
+}
+
+.grind-profile div p{
+  color:#fff ;
+  max-width: 500px;
+  
+}
+
+.grind-profile div:first-child {
+  margin-bottom: 40px; 
+}
+
+.img-header {
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.img-header img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+.img-header .img1 {
+  border-radius: 50%;
+}
+
+.img-header .img2 {
+  border-top-left-radius: 50%; 
+  border-top-right-radius: 50%;
+  overflow: hidden;
+}
+
+.button {
+  text-align: center;
+}
+
+.button a {
+  text-decoration: none;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button a:hover {
+  background-color: #555;
+}
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
