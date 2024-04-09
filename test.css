@@ -44,7 +44,7 @@ nav ul li a {
 }
 nav ul li a:hover {
   color: #7ED957;
-  transform: translateY(-10px);
+  transform: translateY(-40px);
 }
 
 
@@ -54,7 +54,7 @@ nav ul li a:hover {
   100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Apply animation to the header */
+
 .animated-header {
   animation: slideIn 2s ease forwards;
 }
@@ -183,11 +183,16 @@ main {
 .img-header {
   margin-bottom: 20px;
   width: 70%;
+  height: auto; 
+  transition: transform 0.5s;
 }
 
 .img-header img {
   max-width: 100%; 
   height: auto; 
+}
+.img-header img:hover {
+  transform: rotateY(180deg); 
 }
 
 .img-header .img1 {
