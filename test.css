@@ -208,6 +208,7 @@ main {
   overflow: hidden;
 }
 
+
 #Blog {
   display: flex;
   justify-content: center; /* Center children horizontally */
@@ -216,18 +217,20 @@ main {
 
 #Blog .posts {
   width: 300px;
-  padding: 30px;
-  background-color: #333;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #41906b, #35604e); /* Gradient background */
   color: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(179, 68, 68, 0.5); /* Add a shadow effect */
+  box-shadow: 0 2px 4px rgba(29, 23, 23, 0.1); /* Subtle box shadow */
   margin: 0 10px; /* Add some spacing between blog posts */
   position: relative;
-  animation: moveFromLeft 15s linear infinite; /* Continuous movement every 15 seconds */
+  overflow: hidden; /* Hide overflowing content */
+  transition: transform 1s ease-in-out; /* Add transition effect for rotation */
+  animation: moveFromLeft 17s linear infinite; /* Continuous movement every 15 seconds */
 }
 
 #Blog .posts:hover {
-  transform: rotate(5deg); /* Apply rotation on hover */
+  transform: rotate(3deg); /* Apply rotation on hover */
 }
 
 #Blog .posts img {
@@ -248,17 +251,12 @@ main {
   position: absolute;
   bottom: 15px;
   right: 15px;
-  color: #7ED957;
+  color: #fff;
   text-decoration: none;
 }
 
 #Blog .posts a:hover {
-  color: #fff;
-}
-
-#Blog .posts i {
-  font-size: 20px;
-  vertical-align: middle;
+  color: #7ED957;
 }
 
 @keyframes moveFromLeft {
@@ -269,6 +267,7 @@ main {
     transform: translateX(100%);
   }
 }
+
 
 
 
