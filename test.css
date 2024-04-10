@@ -183,7 +183,8 @@ main {
 .img-header {
   margin-bottom: 20px;
   width: 70%;
-  height: auto; 
+  height: auto;
+  overflow: hidden; /* Hides the overflow of the image */
   transition: transform 0.5s;
 }
 
@@ -191,9 +192,11 @@ main {
   max-width: 100%; 
   height: auto; 
 }
+
 .img-header img:hover {
-  transform: rotateY(180deg); 
+  transform: translateY(5%); /* Moves the image up by 50% of its height */
 }
+
 
 .img-header .img1 {
   border-radius: 50%;
@@ -204,6 +207,73 @@ main {
   border-top-right-radius: 50%;
   overflow: hidden;
 }
+
+#Blog {
+  display: flex;
+  justify-content: center; /* Center children horizontally */
+  overflow-x: hidden; /* Hide overflow to prevent horizontal scroll */
+}
+
+#Blog .posts {
+  width: 300px;
+  padding: 30px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(179, 68, 68, 0.5); /* Add a shadow effect */
+  margin: 0 10px; /* Add some spacing between blog posts */
+  position: relative;
+  animation: moveFromLeft 15s linear infinite; /* Continuous movement every 15 seconds */
+}
+
+#Blog .posts:hover {
+  transform: rotate(5deg); /* Apply rotation on hover */
+}
+
+#Blog .posts img {
+  width: 100%;
+  height: auto; /* Ensure image maintains aspect ratio */
+  border-radius: 10px 10px 0 0; /* Apply border-radius only to top corners */
+}
+
+#Blog .posts h3 {
+  margin-top: 0; /* Remove default margin */
+}
+
+#Blog .posts p {
+  margin-bottom: 15px; /* Add spacing between paragraphs */
+}
+
+#Blog .posts a {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #7ED957;
+  text-decoration: none;
+}
+
+#Blog .posts a:hover {
+  color: #fff;
+}
+
+#Blog .posts i {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+@keyframes moveFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+
+
+
 
 .button {
   text-align: center;
