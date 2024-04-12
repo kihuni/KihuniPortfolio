@@ -8,42 +8,40 @@
     <title>Stephen Kihuni</title>
     <link rel="stylesheet" href="test.css">
 <style>
-        .skills {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 20px;
-        align-items: center;
-        }
+                   .skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
 
-        .skill-card {
-            background-color: #41906b;
-            border-radius: 5px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.2s ease-in-out;
-            opacity: 0; /* Initially hide all skill cards */
-        }
+.skill-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-        .skill-card i {
-            font-size: 4rem;
-            color: #fff;
-            transition: transform 3s ease-in-out;
-        }
+.skill-card i {
+    font-size: 3rem;
+    color: #41906b;
+    transition: transform 0.3s ease-in-out;
+}
 
-        .skill-card h3 {
-            font-size: 1.2em;
-            margin-bottom: 5px;
-        }
+.skill-card:hover {
+    background-color: #41906b;
+}
 
-        .skill-card:hover i {
-            transform: scale(1.1) rotate(5deg);
-        }
+.skill-card:hover i {
+    transform: scale(1.1);
+    color: #ffffff;
+}
 
-        .skill-card:hover {
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
 </style>      
 </head>
 <body>
@@ -148,37 +146,24 @@
         <div class="skills">
             <div class="skill-card">
                 <i class="devicon-python-plain colored"></i>
-                <h3>Python</h3>
-                <p>I can write scripts, build applications, and automate tasks with Python.</p>
             </div>
             <div class="skill-card">
                 <i class="devicon-django-plain"></i>
-                <h3>Django</h3>
-                <p>I can develop web applications using the powerful Django framework.</p>
             </div>
             <div class="skill-card">
                 <i class="devicon-azuresqldatabase-plain colored"></i>
-                <p>SQL</p>
-                <h3>SQL</h3>
-                <p>I can write queries to interact with relational databases effectively.</p>
             </div>
             <div class="skill-card">
                 <i class="devicon-postgresql-plain colored"></i>
-                <h3>PostgreSQL</h3>
-                <p>I can work with PostgreSQL, a robust open-source database management system.</p>
             </div>
             <div class="skill-card">
                 <i class="devicon-html5-plain colored"></i>
-                <h3>HTML</h3>
-                <p>I can create the structure and content of web pages using HTML.</p>
             </div>
             <div class="skill-card"> 
                 <i class="devicon-css3-plain colored"></i>
-                <h3>CSS</h3>
-                <p>I can style web pages to make them visually appealing and user-friendly.</p>
             </div>
         </div>        
-
+        <hr class="styled-hr">
         <div class="button">
             <a href="#">Start your project</a>
         </div>
@@ -199,7 +184,7 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.5 }); // Change threshold as needed
+            }, { threshold: 0.1, rootMargin: "100px" }); // Adjust threshold and rootMargin as needed
     
             skillCards.forEach(card => {
                 observer.observe(card);
@@ -210,8 +195,6 @@
             });
         });
     </script>
-    
-    
     
     </div>
 </body>
