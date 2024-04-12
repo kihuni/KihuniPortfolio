@@ -327,3 +327,52 @@ footer {
   padding: 20px;
   text-align: center;
 }
+
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px; /* Adjust container padding */
+  }
+  header {
+    margin: 0; /* Remove margin */
+  }
+  nav ul {
+    flex-direction: column; /* Change navigation to vertical */
+    align-items: center; /* Center navigation items */
+  }
+  nav ul li {
+    margin: 10px 0; /* Adjust margin for navigation items */
+  }
+  .grid-container {
+    grid-template-columns: 1fr; /* Display grid items in a single column */
+  }
+  .img-header {
+    width: 100%; /* Adjust image width */
+  }
+  #Blog .posts {
+    width: 100%; /* Adjust width of blog posts */
+  }
+}
+
+/* Media query for screens smaller than 480px (typical smartphones) */
+@media (max-width: 480px) {
+  .logo img {
+    width: 150px; /* Adjust logo size */
+  }
+  nav ul li {
+    font-size: 20px; /* Decrease font size of navigation items */
+  }
+  .grid-profile {
+    padding: 0 20px; /* Adjust padding */
+  }
+  .skill-card i {
+    font-size: 2rem; /* Decrease skill icon size */
+  }
+  #Blog .posts {
+    padding: 15px; /* Adjust padding of blog posts */
+  }
+  .button a {
+    padding: 8px 16px; /* Adjust button padding */
+  }
+}
