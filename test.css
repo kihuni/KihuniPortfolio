@@ -9,7 +9,7 @@ body{
 
 .opportunity-badge {
   position: fixed;
-  top: 20px;
+  top: 30px;
   right: 20px;
   background-color: #7ED957;
   color: #fff;
@@ -238,39 +238,42 @@ main {
 #Blog {
   display: flex;
   justify-content: center;
-  overflow-x: hidden; /* Hide overflow to prevent horizontal scroll */
+  align-items: center;
+  margin: 0 auto; 
+  overflow-x: hidden; 
+  max-width: 1600px;
 }
 
 #Blog .posts {
   width: 500px;
   padding: 20px;
-  background: linear-gradient(to bottom right, #41906b, #35604e); /* Gradient background */
+  background: linear-gradient(to bottom right, #41906b, #35604e); 
   color: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(29, 23, 23, 0.1); /* Subtle box shadow */
-  margin: 0 10px; /* Add some spacing between blog posts */
+  box-shadow: 0 2px 4px rgba(29, 23, 23, 0.1); 
+  margin: 0 10px; 
   position: relative;
-  overflow: hidden; /* Hide overflowing content */
-  transition: transform 1s ease-in-out; /* Add transition effect for rotation */
-  animation: moveFromLeft 17s linear infinite; /* Continuous movement every 15 seconds */
+  overflow: hidden; 
+  transition: transform 1s ease-in-out; 
+  animation: moveFromLeft 17s linear infinite; 
 }
 
 #Blog .posts:hover {
-  transform: rotate(3deg); /* Apply rotation on hover */
+  transform: rotate(3deg);
 }
 
 #Blog .posts img {
   width: 100%;
-  height: auto; /* Ensure image maintains aspect ratio */
-  border-radius: 10px 10px 0 0; /* Apply border-radius only to top corners */
+  height: auto;
+  border-radius: 10px 10px 0 0;
 }
 
 #Blog .posts h3 {
-  margin-top: 0; /* Remove default margin */
+  margin-top: 0; 
 }
 
 #Blog .posts p {
-  margin-bottom: 15px; /* Add spacing between paragraphs */
+  margin-bottom: 15px; 
 }
 
 #Blog .posts a {
@@ -293,12 +296,6 @@ main {
     transform: translateX(100%);
   }
 }
-
-
-
-
-
-
 
 .button {
   text-align: center;
