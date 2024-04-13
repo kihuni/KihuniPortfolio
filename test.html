@@ -8,7 +8,13 @@
     <title>Stephen Kihuni</title>
     <link rel="stylesheet" href="test.css">
 <style>
-                   .skills {
+    .skill-name{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 30px;
+    }
+
+    .skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -102,6 +108,30 @@
             <div class="div-right"></div>
         </div>
         <hr class="styled-hr">
+        <h2 class="skill-name">Skills</h2>
+        <div class="skills">
+            <div class="skill-card">
+                <i class="devicon-python-plain colored"></i>
+            </div>
+            <div class="skill-card">
+                <i class="devicon-django-plain"></i>
+            </div>
+            <div class="skill-card">
+                <i class="devicon-azuresqldatabase-plain colored"></i>
+            </div>
+            <div class="skill-card">
+                <i class="devicon-postgresql-plain colored"></i>
+            </div>
+            <div class="skill-card">
+                <i class="devicon-html5-plain colored"></i>
+            </div>
+            <div class="skill-card"> 
+                <i class="devicon-css3-plain colored"></i>
+            </div>
+        </div>   
+        <hr class="styled-hr">
+        <h2 class="skill-name">Blog</h2>
+
         <div id="Blog" >
             <div class="blog1">
                 <div class="posts">
@@ -140,30 +170,44 @@
                     <a href="https://book-review-app-tree-main-bookreview-frontend.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-up-right-from-square"></i></a>                        
                 </div>
             </div>
+        </div>     
+        <hr class="styled-hr">
+        <h2 class="skill-name">Projects</h2>
+        <div id="projects">
+            <div class="projects">
+                <div class="project-card">
+                    <img src="Images/Explore Backend.png" alt="Project 1">
+                    <h3>Budject management system</h3>
+                    <p>
+                        A web application that allows users to search for books, view book details, and write reviews.
+                    </p>
+                    <a href="https://book-review-app-tree-main-bookreview-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <img src="Images/Explore Backend.png" alt="Project 2">
+                    <h3>Weather App</h3>
+                    <p>
+                        A web application that allows users to search for weather information for a specific location.
+                    </p>
+                    <a href="https://book-review-app-tree-main-bookreview-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <img src="Images/Explore Backend.png" alt="Project 3">
+                    <h3>Todo App</h3>
+                    <p>
+                        A web application that allows users to create, update, and delete todo items.
+                    </p>
+                    <a href="https://book-review-app-tree-main-bookreview-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-        <hr class="styled-hr">
-
-        <div class="skills">
-            <div class="skill-card">
-                <i class="devicon-python-plain colored"></i>
-            </div>
-            <div class="skill-card">
-                <i class="devicon-django-plain"></i>
-            </div>
-            <div class="skill-card">
-                <i class="devicon-azuresqldatabase-plain colored"></i>
-            </div>
-            <div class="skill-card">
-                <i class="devicon-postgresql-plain colored"></i>
-            </div>
-            <div class="skill-card">
-                <i class="devicon-html5-plain colored"></i>
-            </div>
-            <div class="skill-card"> 
-                <i class="devicon-css3-plain colored"></i>
-            </div>
-        </div>        
-        <hr class="styled-hr">
+        
         <div class="button">
             <a href="#">Start your project</a>
         </div>
@@ -194,6 +238,34 @@
                 }
             });
         });
+    </script>
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+  const projectCards = document.querySelectorAll(".project-card");
+
+  function checkVisible(element) {
+    const windowHeight = window.innerHeight;
+    const rect = element.getBoundingClientRect();
+    return rect.top < windowHeight;
+  }
+
+  function animateCards() {
+    projectCards.forEach((card, index) => {
+      if (checkVisible(card)) {
+        setTimeout(() => {
+          card.style.opacity = "1";
+        }, index * 500); // Adjust delay time (in milliseconds) as needed
+      }
+    });
+  }
+
+  animateCards();
+
+  window.addEventListener("scroll", function() {
+    animateCards();
+  });
+});
+
     </script>
     
     </div>

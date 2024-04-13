@@ -302,6 +302,70 @@ main {
     transform: translateX(100%);
   }
 }
+#projects {
+  padding: 20px;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background-color: #41906b;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  max-width: 400px;
+  height: auto;
+}
+
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-height: 150px;
+}
+
+.project-card h3 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.project-card p {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.project-card:hover {
+  background-color: #8aeabd;
+}
+
+.project-card:hover i {
+  transform: scale(1.1);
+  color: #ffffff;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 
 .button {
   text-align: center;
@@ -309,7 +373,7 @@ main {
 
 .button a {
   text-decoration: none;
-  background-color: #333;
+  background-color: #e83838;
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
