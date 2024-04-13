@@ -6,49 +6,7 @@
     <script src="https://kit.fontawesome.com/d25f1a26ea.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <title>Stephen Kihuni</title>
-    <link rel="stylesheet" href="test.css">
-<style>
-    .skill-name{
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 30px;
-    }
-
-    .skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-    align-items: center;
-}
-
-.skill-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: all 0.2s ease-in-out;
-    opacity: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.skill-card i {
-    font-size: 3rem;
-    color: #41906b;
-    transition: transform 0.3s ease-in-out;
-}
-
-.skill-card:hover {
-    background-color: #41906b;
-}
-
-.skill-card:hover i {
-    transform: scale(1.1);
-    color: #ffffff;
-}
-
-</style>      
+    <link rel="stylesheet" href="test.css">     
 </head>
 <body>
     <div class="container">
@@ -216,28 +174,34 @@
         
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const skillCards = document.querySelectorAll(".skill-card");
-    
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.style.opacity = "1";
-                        }, index * 500); // Adjust delay time (in milliseconds) as needed
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: "100px" }); // Adjust threshold and rootMargin as needed
-    
-            skillCards.forEach(card => {
-                observer.observe(card);
-                // Check if the card is already in view
-                if (card.getBoundingClientRect().top < window.innerHeight) {
-                    card.style.opacity = "1";
-                }
-            });
-        });
+document.addEventListener("DOMContentLoaded", function () {
+  const skillCards = document.querySelectorAll(".skill-card");
+
+  function checkVisible(element) {
+    const windowHeight = window.innerHeight;
+    const rect = element.getBoundingClientRect();
+    return rect.top < windowHeight;
+  }
+
+  function animateCards() {
+    skillCards.forEach((card, index) => {
+      if (checkVisible(card)) {
+        setTimeout(() => {
+          card.style.opacity = "1";
+        }, index * 500); // Adjust delay time (in milliseconds) as needed
+      } else {
+        card.style.opacity = "0"; // Reset opacity if card is not visible
+      }
+    });
+  }
+
+  animateCards();
+
+  window.addEventListener("scroll", function() {
+    animateCards();
+  });
+});
+
     </script>
     <script>
        document.addEventListener("DOMContentLoaded", function () {
@@ -255,6 +219,8 @@
         setTimeout(() => {
           card.style.opacity = "1";
         }, index * 500); // Adjust delay time (in milliseconds) as needed
+      } else {
+        card.style.opacity = "0"; // Reset opacity if card is not visible
       }
     });
   }
@@ -265,6 +231,7 @@
     animateCards();
   });
 });
+
 
     </script>
     
