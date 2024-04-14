@@ -404,6 +404,100 @@ main {
   }
 }
 
+/* Contact Section */
+#contact {
+  background-color: #222; /* Dark background color */
+  color: #fff; /* Light text color */
+  padding: 80px 0; /* Add some vertical spacing */
+  height: 900px;
+}
+
+.container {
+  max-width: 1200px; /* Adjust the maximum width of the container */
+  margin: 0 auto; 
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-left,
+.contact-right {
+  flex: 0 0 48%; /* Make both columns take up 48% of the container width */
+}
+
+.contact-left {
+  margin-right: 20px; /* Add some spacing between the columns */
+}
+
+.contact-right {
+  margin-left: 20px; /* Add some spacing between the columns */
+}
+
+.sub-title {
+  font-size: 62px; /* Increase the font size of the sub-title */
+  margin-bottom: 20px; /* Add some spacing below the sub-title */
+}
+
+.contact-left p,
+.social-icons a {
+  color: #aaa; /* Lighter text color for contact information */
+}
+
+.contact-left p {
+  margin-bottom: 35px; /* Add some spacing between contact information */
+}
+
+.icons {
+  display: flex;
+  margin-top: 40px; /* Add some spacing above social icons */
+  transform: translateY(-50%); 
+
+}
+
+.icons a {
+  font-size: 24px; /* Adjust the size of social icons */
+  margin-right: 30px; /* Add some spacing between social icons */
+  margin-bottom: 20px;
+  margin-top: 40px;
+  color: #333;
+  font-size: 45px;
+  text-decoration: none;
+  transition: transform 0.5s;
+}
+.icons a:hover{
+  color: #7ED957;
+  transform: translateY(-5px);
+}
+
+
+.contact-right form input,
+.contact-right form textarea {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px; /* Add some spacing between form inputs */
+  border: 1px solid #555; /* Add border to form inputs */
+  background-color: #333; /* Dark background color for form inputs */
+  color: #fff; /* Light text color for form inputs */
+}
+
+.contact-right form textarea {
+  resize: none; /* Disable textarea resizing */
+}
+
+.contact-right form button {
+  padding: 10px 20px; /* Add padding to the submit button */
+  background-color: #7ED957; /* Green background color for the submit button */
+  color: #fff; /* Light text color for the submit button */
+  border: none; /* Remove border from the submit button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.contact-right form button:hover {
+  background-color: #5cbf2a; /* Darker green background color on hover */
+}
 
 
 .button {
