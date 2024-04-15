@@ -17,6 +17,8 @@
         <div class="logo">
             <img src="Images/Stephen__1_-removebg-preview.png" alt="Logo">
         </div>
+        <div class="cancel-icon" onclick="toggleMenu()">&#10006;</div>
+        <div class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</div>
         <nav>
             <ul>
                 <li><a href="#aboutme">About Me</a></li>
@@ -140,6 +142,9 @@
             </div>
         </div> 
         </div>  
+        <div class="button">
+            <a href="https://dev.to/kihuni" target="_blank">More Blogs</a>
+        </div>
         <hr class="styled-hr">
         <h2 class="skill-name">Projects</h2>
         <div id="projects">
@@ -213,10 +218,6 @@
 </div>
 
 <hr class="styled-hr">
-
-<div class="button">
-    <a href="#">Start your project</a>
-</div>
 </main>
     <footer>
         
@@ -302,11 +303,47 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-
-
-
 </script>
+<script>
+   let isMenuOpen = false;
+const nav = document.querySelector('nav');
+const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+const cancelIcon = document.querySelector('.cancel-icon');
 
+function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    nav.style.display = isMenuOpen ? 'flex' : 'none';
+    mobileMenuIcon.style.display = isMenuOpen ? 'none' : 'block';
+    cancelIcon.style.display = isMenuOpen ? 'block' : 'none';
+}
+
+function handleResize() {
+    // Hide the menu and reset the menu icon based on window width
+    if (window.innerWidth <= 768) {
+        nav.style.display = isMenuOpen ? 'flex' : 'none';
+        mobileMenuIcon.style.display = isMenuOpen ? 'none' : 'block';
+        cancelIcon.style.display = isMenuOpen ? 'block' : 'none';
+    } else {
+        nav.style.display = 'flex';
+        mobileMenuIcon.style.display = 'none';
+        cancelIcon.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Hide the cancel icon and nav menu on page load for smaller screens
+    handleResize();
+});
+
+document.addEventListener('click', function (event) {
+    if (isMenuOpen && !nav.contains(event.target) && event.target !== mobileMenuIcon) {
+        toggleMenu();
+    }
+});
+
+// Listen for window resize events
+window.addEventListener('resize', handleResize);
+</script>
 </div>
 </body>
 </html>

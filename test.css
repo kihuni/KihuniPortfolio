@@ -42,8 +42,7 @@ body{
 
 header {
   color: #fff;
-  padding: 30px 0; 
-  margin: 0 29%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,6 +90,27 @@ nav ul li a:hover {
   animation: slideIn 2s ease forwards;
 }
 
+.menu-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.mobile-menu-icon,
+.cancel-icon {
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Adjust menu icon order */
+.mobile-menu-icon {
+  order: 1;
+}
+
+.cancel-icon {
+  order: 2;
+  display: none; /* Initially hide cancel icon */
+}
 
 main {
   padding: 20px;
@@ -587,7 +607,7 @@ main {
 
 .button a {
   text-decoration: none;
-  background-color: #e83838;
+  background-color: #128c7e;
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
@@ -595,7 +615,7 @@ main {
 }
 
 .button a:hover {
-  background-color: #555;
+  background-color: #25d366;
 }
 
 
@@ -605,8 +625,6 @@ footer {
   padding: 20px;
   text-align: center;
 }
-
-
 
 @media (max-width: 768px) {
   .container {
@@ -622,6 +640,30 @@ footer {
   nav ul li {
     margin: 10px 0; /* Adjust margin for navigation items */
   }
+  .menu-toggle {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.mobile-menu-icon,
+    .cancel-icon {
+        display: block;
+    }
+
+    /* Initial rotation for cancel icon */
+    .cancel-icon {
+        transform: rotate(0deg);
+    }
+
+    /* Simplify animation */
+    .mobile-menu-icon.open {
+        transform: rotate(90deg);
+    }
+
+    /* Hide nav menu on smaller screens by default */
+    nav {
+        display: none;
+    }
   .grid-container {
     grid-template-columns: 1fr; /* Display grid items in a single column */
   }
@@ -649,8 +691,7 @@ footer {
   .social-icons a {
     margin: 0 50px; /* Add spacing between icons */
     margin-bottom: 0; /* Remove bottom margin */
-  }
-  
+  }  
 }
 
 
