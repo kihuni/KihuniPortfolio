@@ -47,10 +47,14 @@
             </div>
             <div class="div-right"></div>
         </div>
-        
+        <div class="scroll-arrow" data-target="#about">
+            <a href="#about" class="scroll-link">
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
         <hr class="styled-hr">
 
-        <div class="grid-container">
+        <div id="about" class="grid-container">
             <div class="div-left"></div>
             <div class="grid-profile profile">
                 <div><h1>Who is Kihuni ?</h1></div>
@@ -86,7 +90,12 @@
             <div class="skill-card"> 
                 <i class="devicon-css3-plain colored"></i>
             </div>
-        </div>   
+        </div>  
+        <div class="scroll-arrow" data-target="#blog">
+            <a href="#blog" class="scroll-link">
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
         <hr class="styled-hr">
         <h2 class="skill-name">Blog</h2>
 
@@ -128,7 +137,12 @@
                     <a href="https://book-review-app-tree-main-bookreview-frontend.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-up-right-from-square"></i></a>                        
                 </div>
             </div>
-        </div>     
+        </div> 
+        <div class="scroll-arrow" data-target="#projects">
+            <a href="#projects" class="scroll-link">
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>  
         <hr class="styled-hr">
         <h2 class="skill-name">Projects</h2>
         <div id="projects">
@@ -165,6 +179,16 @@
                 </div>
             </div>
         </div>
+        <div class="scroll-arrow" data-target="#contact">
+            <a href="#contact" class="scroll-link">
+              <i class="fas fa-arrow-down"></i>
+            </a>
+          </div>
+<div class="WhatsApp">
+    <p>Chat with me via WhatsApp:</p>
+    <a href="https://wa.me/0717788354" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+  
         <hr class="styled-hr">
         <h2 class="skill-name">Contacts</h2>
        <!-----------Contact----------->
@@ -196,12 +220,12 @@
     </div>
 </div>
 
-         <hr class="styled-hr">
+<hr class="styled-hr">
 
-        <div class="button">
-            <a href="#">Start your project</a>
-        </div>
-    </main>
+<div class="button">
+    <a href="#">Start your project</a>
+</div>
+</main>
     <footer>
         
     </footer>
@@ -266,7 +290,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     </script>
-    
-    </div>
+    <script>
+document.querySelectorAll('.scroll-arrow').forEach(item => {
+  item.addEventListener('click', event => {
+    event.preventDefault();
+    const nextSection = item.getAttribute('data-target');
+    document.querySelector(nextSection).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+
+    </script>
+</div>
 </body>
 </html>

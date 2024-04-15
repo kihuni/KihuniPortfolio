@@ -407,7 +407,7 @@ main {
 /* Contact Section */
 #contact {
   background-color: #222; /* Dark background color */
-  color: #fff; /* Light text color */
+  color: #4dbcab; /* Light text color */
   padding: 80px 0; /* Add some vertical spacing */
   height: 900px;
 }
@@ -425,7 +425,7 @@ main {
 
 .contact-left,
 .contact-right {
-  flex: 0 0 48%; /* Make both columns take up 48% of the container width */
+  flex: 0 0 48%; 
 }
 
 .contact-left {
@@ -443,11 +443,12 @@ main {
 
 .contact-left p,
 .social-icons a {
-  color: #aaa; /* Lighter text color for contact information */
+  color: #a5e38e; 
 }
 
 .contact-left p {
-  margin-bottom: 35px; /* Add some spacing between contact information */
+  margin-bottom: 45px; /* Add some spacing between contact information */
+  font-size: 35px;
 }
 
 .icons {
@@ -458,11 +459,11 @@ main {
 }
 
 .icons a {
-  font-size: 24px; /* Adjust the size of social icons */
+  font-size: 44px; /* Adjust the size of social icons */
   margin-right: 30px; /* Add some spacing between social icons */
   margin-bottom: 20px;
   margin-top: 40px;
-  color: #333;
+  color: #4eaa92;
   font-size: 45px;
   text-decoration: none;
   transition: transform 0.5s;
@@ -478,8 +479,9 @@ main {
   width: 100%;
   padding: 20px;
   margin-bottom: 20px; /* Add some spacing between form inputs */
-  border: 1px solid #555; /* Add border to form inputs */
-  background-color: #333; /* Dark background color for form inputs */
+  color: #4eaa92;
+  border: 1px solid #828282; /* Add border to form inputs */
+  background-color: #356b61; /* Dark background color for form inputs */
   color: #fff; /* Light text color for form inputs */
 }
 
@@ -498,6 +500,96 @@ main {
 .contact-right form button:hover {
   background-color: #5cbf2a; /* Darker green background color on hover */
 }
+
+/* CSS */
+.WhatsApp {
+  position: fixed;
+  top: 20px; /* Adjust top position */
+  left: 20px; /* Adjust left position */
+  z-index: 9999; /* Ensure it's above other content */
+}
+.WhatsApp p {
+  color: #fff; /* Set text color */
+  font-size: 16px; /* Set font size */
+  margin-bottom: 10px; /* Add some spacing below the paragraph */
+  font-family: 'Courier New', Courier, monospace;
+}
+.WhatsApp a {
+  display: block;
+  width: 60px; /* Adjust width and height as needed */
+  height: 60px; /* Adjust width and height as needed */
+  line-height: 60px; /* Center the icon vertically */
+  background-color: #25d366; /* WhatsApp green color */
+  color: #fff;
+  text-align: center;
+  border-radius: 50%; /* Make it round */
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.WhatsApp a:hover {
+  background-color: #128c7e; /* Darker green on hover */
+}
+
+/* Adjust icon size */
+.WhatsApp i {
+  font-size: 32px; /* Adjust icon size as needed */
+}
+
+
+.scroll-arrow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999; 
+  background-color: #46a651; /* Change to desired background color */
+  color: #99de94; /* Change to desired arrow color */
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.scroll-link {
+  display: block;
+}
+
+.scroll-arrow a {
+  display: block;
+}
+
+.scroll-arrow i {
+  font-size: 24px;
+  color: #fff;
+  animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+/* Adjust position for each arrow */
+.scroll-arrow:nth-child(1) {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-arrow:nth-child(2) {
+  bottom: 20px;
+  right: 50px;
+}
+
+.scroll-arrow:nth-child(3) {
+  bottom: 20px;
+  left: 50px;
+}
+
+
 
 
 .button {
@@ -569,7 +661,35 @@ footer {
   #Blog .posts {
     padding: 15px; /* Adjust padding of blog posts */
   }
-  .button a {
+  .contact-left {
+    flex: 1; /* Make contact information fill the entire width */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 20px; /* Add some spacing between contact information and form */
+  }
+  .contact-right {
+    flex: 1; /* Make contact form fill the entire width */
+    margin-left: 0; /* Remove left margin */
+  }
+  .contact-left p {
+    font-size: 10px; /* Decrease font size of contact information */
+    margin-bottom: 20px; /* Add some spacing between contact information */
+  }
+  .icons {
+    justify-content: center; /* Center social icons */
+  }
+  .icons a {
+    margin: 0 10px; /* Add some spacing between social icons */
+    margin-top: 20px; /* Add some spacing above social icons */
+    margin-bottom: 20px; /* Add some spacing below social icons */
+  }
+ .button a {
     padding: 8px 16px; /* Adjust button padding */
   }
+  .contact-left p {
+    font-size: 16px; /* Further decrease font size of contact information */
+  }
+  .icons a {
+    font-size: 30px; /* Decrease size of social icons */
+  }
 }
+
