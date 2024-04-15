@@ -267,9 +267,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (checkVisible(card)) {
         setTimeout(() => {
           card.style.opacity = "1";
-        }, index * 500); // Adjust delay time (in milliseconds) as needed
+        }, index * 500); 
       } else {
-        card.style.opacity = "0"; // Reset opacity if card is not visible
+        card.style.opacity = "0"; 
       }
     });
   }
@@ -295,7 +295,6 @@ document.addEventListener('DOMContentLoaded', function() {
       scrollArrowUp.classList.remove('fade-in');
     }
 
-    // Assuming the down arrow appears when the user scrolls up
     if (window.scrollY < (document.body.clientHeight - window.innerHeight - 100)) {
       scrollArrowDown.classList.add('fade-in');
     } else {
@@ -318,7 +317,6 @@ function toggleMenu() {
 }
 
 function handleResize() {
-    // Hide the menu and reset the menu icon based on window width
     if (window.innerWidth <= 768) {
         nav.style.display = isMenuOpen ? 'flex' : 'none';
         mobileMenuIcon.style.display = isMenuOpen ? 'none' : 'block';
