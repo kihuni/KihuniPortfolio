@@ -331,7 +331,9 @@ main {
 
 #Blog .posts a:hover {
   color: #7ED957;
+  transform: scale(1.1);
 }
+
 
 @keyframes moveFromLeft {
   0% {
@@ -501,7 +503,6 @@ main {
   background-color: #5cbf2a; /* Darker green background color on hover */
 }
 
-/* CSS */
 .WhatsApp {
   position: fixed;
   top: 20px; /* Adjust top position */
@@ -627,10 +628,17 @@ footer {
   .img-header {
     width: 100%; /* Adjust image width */
   }
+  #Blog {
+    flex-direction: column; /* Change flex direction to column */
+  }
   #Blog .posts {
     width: 100%; /* Adjust width of blog posts */
+    animation: none; /* Stop the animation on mobile */
+    width: calc(100% - 20px); /* Adjust width to fit within container */
+    margin: 0 10px 20px; /* Add margin for spacing */
   }
 }
+
 
 /* Media query for screens smaller than 480px (typical smartphones) */
 @media (max-width: 480px) {
