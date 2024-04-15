@@ -21,7 +21,7 @@
             <ul>
                 <li><a href="#aboutme">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li><a href="#Blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#testimonies">Testimonies</a></li>
             </ul>
@@ -47,11 +47,17 @@
             </div>
             <div class="div-right"></div>
         </div>
-        <div class="scroll-arrow" data-target="#about">
+        <div class="scroll-arrow scroll-down" data-target="#about">
             <a href="#about" class="scroll-link">
                 <i class="fas fa-arrow-down"></i>
             </a>
         </div>
+        <div class="scroll-arrow scroll-up" id="scrollToTop">
+            <a href="#" class="scroll-link">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+        
         <hr class="styled-hr">
 
         <div id="about" class="grid-container">
@@ -91,11 +97,6 @@
                 <i class="devicon-css3-plain colored"></i>
             </div>
         </div>  
-        <div class="scroll-arrow" data-target="#blog">
-            <a href="#blog" class="scroll-link">
-                <i class="fas fa-arrow-down"></i>
-            </a>
-        </div>
         <hr class="styled-hr">
         <h2 class="skill-name">Blog</h2>
 
@@ -138,10 +139,6 @@
                 </div>
             </div>
         </div> 
-        <div class="scroll-arrow" data-target="#projects">
-            <a href="#projects" class="scroll-link">
-                <i class="fas fa-arrow-down"></i>
-            </a>
         </div>  
         <hr class="styled-hr">
         <h2 class="skill-name">Projects</h2>
@@ -179,11 +176,6 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-arrow" data-target="#contact">
-            <a href="#contact" class="scroll-link">
-              <i class="fas fa-arrow-down"></i>
-            </a>
-          </div>
 <div class="WhatsApp">
     <p>Chat with me via WhatsApp:</p>
     <a href="https://wa.me/0717788354" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
@@ -290,17 +282,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     </script>
-    <script>
-document.querySelectorAll('.scroll-arrow').forEach(item => {
-  item.addEventListener('click', event => {
-    event.preventDefault();
-    const nextSection = item.getAttribute('data-target');
-    document.querySelector(nextSection).scrollIntoView({ behavior: 'smooth' });
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var scrollArrowUp = document.querySelector('.scroll-up');
+  var scrollArrowDown = document.querySelector('.scroll-down');
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 100) {
+      scrollArrowUp.classList.add('fade-in');
+    } else {
+      scrollArrowUp.classList.remove('fade-in');
+    }
+
+    // Assuming the down arrow appears when the user scrolls up
+    if (window.scrollY < (document.body.clientHeight - window.innerHeight - 100)) {
+      scrollArrowDown.classList.add('fade-in');
+    } else {
+      scrollArrowDown.classList.remove('fade-in');
+    }
   });
 });
 
 
-    </script>
+
+</script>
+
 </div>
 </body>
 </html>

@@ -536,20 +536,15 @@ main {
   font-size: 32px; /* Adjust icon size as needed */
 }
 
-
 .scroll-arrow {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999; 
-  background-color: #46a651; /* Change to desired background color */
-  color: #99de94; /* Change to desired arrow color */
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
+  bottom: 80px;
+  display: none;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
 }
 
-.scroll-link {
+.scroll-arrow.fade-in {
   display: block;
 }
 
@@ -560,7 +555,11 @@ main {
 .scroll-arrow i {
   font-size: 24px;
   color: #fff;
-  animation: bounce 2s infinite alternate;
+  animation: bounce 2s infinite alternate, fadeIn 0.5s ease;
+}
+
+.scroll-arrow i.fa-arrow-down {
+  transform: rotate(180deg); /* Rotate the down arrow */
 }
 
 @keyframes bounce {
@@ -572,25 +571,14 @@ main {
   }
 }
 
-/* Adjust position for each arrow */
-.scroll-arrow:nth-child(1) {
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-.scroll-arrow:nth-child(2) {
-  bottom: 20px;
-  right: 50px;
-}
-
-.scroll-arrow:nth-child(3) {
-  bottom: 20px;
-  left: 50px;
-}
-
-
-
 
 .button {
   text-align: center;
