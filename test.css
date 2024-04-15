@@ -637,6 +637,20 @@ footer {
     width: calc(100% - 20px); /* Adjust width to fit within container */
     margin: 0 10px 20px; /* Add margin for spacing */
   }
+  .social-icons {
+    flex-direction: row; 
+    position: static; 
+    top: auto; 
+    left: auto; 
+    transform: none; 
+    justify-content: center; 
+  }
+
+  .social-icons a {
+    margin: 0 50px; /* Add spacing between icons */
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+  
 }
 
 
@@ -670,14 +684,7 @@ footer {
     font-size: 10px; /* Decrease font size of contact information */
     margin-bottom: 20px; /* Add some spacing between contact information */
   }
-  .icons {
-    justify-content: center; /* Center social icons */
-  }
-  .icons a {
-    margin: 0 10px; /* Add some spacing between social icons */
-    margin-top: 20px; /* Add some spacing above social icons */
-    margin-bottom: 20px; /* Add some spacing below social icons */
-  }
+
  .button a {
     padding: 8px 16px; /* Adjust button padding */
   }
