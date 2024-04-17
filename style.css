@@ -822,6 +822,36 @@ main {
   .button a {
     padding: 10px 20px; 
   }
+  .WhatsApp {
+    position: fixed; /* Keep the WhatsApp div fixed */
+    bottom: 100px; /* Position it 20px from the bottom */
+    right: -70px; /* Position it 20px from the right */
+    z-index: 9999; /* Ensure it's above other content */
+    background-color: transparent; /* Remove background color */
+  }
+
+  .WhatsApp a {
+    display: block;
+    width: 60px; /* Adjust width */
+    height: 60px; /* Adjust height */
+    line-height: 60px; /* Center the icon vertically */
+    background-color: #25d366; /* WhatsApp green color */
+    color: #fff; /* Text color */
+    text-align: center;
+    border-radius: 50%; /* Make it round */
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Add transition */
+  }
+
+  .WhatsApp a:hover {
+    background-color: #128c7e; /* Darker green on hover */
+  }
+
+  /* Adjust icon size */
+  .WhatsApp i {
+    font-size: 32px; /* Adjust icon size */
+  }
+  
 }
 
 
