@@ -720,6 +720,13 @@ main {
 
 
 @media (max-width: 768px) {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box; /* Ensures consistent box model */
+    margin: 0; /* Reset default margins */
+    padding: 0; /* Reset default padding */
+  }
   .container {
     padding: 0 20px; /* Adjust container padding */
   }
