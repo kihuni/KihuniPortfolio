@@ -553,6 +553,12 @@ main {
   background-color: #5cbf2a; /* Darker green background color on hover */
 }
 
+.whatsapp-container {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  width: 100%; /* Span the full width */
+}
+
 .WhatsApp {
   position: fixed;
   bottom: 20px; /* Adjust bottom position */
