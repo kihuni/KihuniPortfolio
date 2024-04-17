@@ -557,14 +557,16 @@ main {
   display: flex;
   justify-content: flex-end; /* Align items to the right */
   width: 100%; /* Span the full width */
+  position: fixed; /* Make container fixed for bottom positioning */
+  bottom: 20px; /* Position container at the bottom */
 }
 
 .WhatsApp {
-  position: fixed;
-  bottom: 20px; /* Adjust bottom position */
+  /* Remove float property, flexbox handles positioning */
+  position: relative; /* Needed for bottom positioning within container */
+  bottom: 0; /* Position WhatsApp div at bottom within container */
   right: 20px; /* Adjust right position */
   z-index: 9999; /* Ensure it's above other content */
-  float: right;
 }
 
 .WhatsApp p {
