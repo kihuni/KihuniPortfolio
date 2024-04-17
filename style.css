@@ -759,12 +759,17 @@ main {
 
   /* Adjust margin of nav items */
   nav ul li {
-    margin: 0 10px; /* Add margin around items */
+    margin: 0 10px;
   }
 
   .grid-container {
-    grid-template-columns: 1fr; /* Display grid items in a single column */
+    grid-template-columns: 1fr; 
   }
+  
+  .grid-profile div p{
+    font-size: 12px;
+  }
+
   .img-header {
     width: 100%; /* Adjust image width */
   }
