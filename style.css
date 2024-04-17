@@ -558,6 +558,7 @@ main {
   bottom: 20px; /* Adjust bottom position */
   right: 20px; /* Adjust right position */
   z-index: 9999; /* Ensure it's above other content */
+  float: right;
 }
 
 .WhatsApp p {
