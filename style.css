@@ -825,7 +825,7 @@ main {
   .WhatsApp {
     position: fixed; /* Keep the WhatsApp div fixed */
     bottom: 100px; /* Position it 20px from the bottom */
-    right: -70px; /* Position it 20px from the right */
+    right: 10px; /* Position it 20px from the right */
     z-index: 9999; /* Ensure it's above other content */
     background-color: transparent; /* Remove background color */
   }
@@ -850,6 +850,9 @@ main {
   /* Adjust icon size */
   .WhatsApp i {
     font-size: 32px; /* Adjust icon size */
+  }
+  .WhatsApp p {
+    display: none; /* Hide the WhatsApp paragraph */
   }
   
 }
