@@ -307,6 +307,9 @@ main {
   margin: 0 auto; 
   overflow-x: hidden; 
   max-width: 1600px;
+  border: #356b61 solid 2px;
+  box-shadow: #5cbf2a 0 0 10px;
+  border-radius: 10px;
 }
 
 #Blog .posts {
@@ -802,7 +805,42 @@ main {
   .button a {
     padding: 10px 20px; 
   }
+  .WhatsApp {
+    position: fixed;
+    bottom:100px; /* Adjust bottom position */
+    right: 0; /* Position at the bottom right */
+    z-index: 9999; /* Ensure it's above other content */
+  }
+  .WhatsApp p{
+    color: #fff; /* Set text color */
+    font-size: 14px; /* Set font size */
+    margin-bottom: 20px; /* Add some spacing below the paragraph */
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .WhatsApp a {
+    display: block;
+    width: 45px; /* Adjust width */
+    height: 60px; /* Adjust height */
+    line-height: 60px; /* Center the icon vertically */
+    background-color: #25d366; /* WhatsApp green color */
+    color: #fff; /* Text color */
+    text-align: center;
+    border-radius: 50%; /* Make it round */
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Add transition */
+  }
+
+  .WhatsApp a:hover {
+    background-color: #128c7e; /* Darker green on hover */
+  }
+
+  /* Adjust icon size */
+  .WhatsApp i {
+    font-size: 32px; /* Adjust icon size */
+  }
 }
+
 
 
 /* Media query for screens smaller than 480px (typical smartphones) */
