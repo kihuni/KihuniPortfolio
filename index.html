@@ -5,18 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <title>Stephen Kihuni - Backend Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <header class="hero">
+    <nav class="navbar">
         <div class="container">
-            <div class="hero-content">
-                <h1>Stephen Kihuni</h1>
-                <p>Back-end Developer and a Technical Writer</p>
-                <img src="Images/new edit.png" alt="Stephen Kihuni">
+            <div class="branding">
+                <img src="Images/new edit.png" alt="Stephen Kihuni" class="profile-img">
+                <div class="brand-text">
+                    <a href="#" class="brand">Stephen Kihuni</a>
+                    <p>Back-end Developer and Technical Writer</p>
+                </div>
             </div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="close-icon" id="close-icon" onclick="toggleMenu()">&#10005;</div>
         </div>
-    </header>
+    </nav>
 
     <section id="about" class="about">
         <div class="container">
@@ -43,6 +58,7 @@
         </div>
     </section>
 
+    
     <section id="projects" class="projects">
         <div class="container">
             <h2>Projects</h2>
@@ -64,6 +80,7 @@
         </div>
     </section>
 
+
     <section id="blog" class="blog">
         <div class="container">
             <h2>Blog</h2>
@@ -82,6 +99,7 @@
         </div>
     </section>
 
+   
     <section id="resume" class="resume">
         <div class="container">
             <h2>Resume</h2>
@@ -106,22 +124,35 @@
     </section>
 
     <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzRghEyCpf-uoYUpodIt8Ta_NX2QM8SiS3FVDP1aLuuWMZE8SMknJKNQYXEkhCT7aDxfg/exec'
-                const form = document.forms['submit-to-google-sheet']
-                const msg = document.getElementById('msg')
-                
-                form.addEventListener('submit', e => {
-                    e.preventDefault()
-                    fetch(scriptURL, { method: 'POST',mode: 'cors', body: new FormData(form)})
-                        .then(response => {
-                            msg.innerHTML = "Message sent successfully"
-                            setTimeout(function(){
-                                msg.innerHTML = ""
-                            },5000)
-                            form.reset()
-                        })
-                        .catch(error => console.error('Error!', error.message))
-                })
-    </script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzRghEyCpf-uoYUpodIt8Ta_NX2QM8SiS3FVDP1aLuuWMZE8SMknJKNQYXEkhCT7aDxfg/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById('msg')
+            
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST',mode: 'cors', body: new FormData(form)})
+                    .then(response => {
+                        msg.innerHTML = "Message sent successfully"
+                        setTimeout(function(){
+                            msg.innerHTML = ""
+                        },5000)
+                        form.reset()
+                    })
+                    .catch(error => console.error('Error!', error.message))
+            })
+</script>
+
+<script>
+
+    function toggleMenu() {
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        navLinks.classList.toggle('active');
+        menuIcon.classList.toggle('active');
+        closeIcon.classList.toggle('active');
+    }
+</script>
 </body>
 </html>
