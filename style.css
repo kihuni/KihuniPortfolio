@@ -165,57 +165,96 @@ h1, h2, h3 {
     margin-right: 0.5rem;
 }
 
-.close-icon {
+/* Add styles for menu and close icon */
+
+.menu-icon, .close-icon {
     display: none;
-    font-size: 2rem;
-    color: #fff;
     cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Adjust menu alignment */
+    margin-top: 0; /* Remove default margin */
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #002B5B; /* Adjust background color */
+    padding: 1rem 0;
+    z-index: 999; /* Ensure it's above other content */
+}
+
+.nav-links.active li {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.nav-links.active a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.nav-links.active a:hover {
+    color: #76C7C0;
 }
 
 @media (max-width: 768px) {
-    .navbar .nav-links {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100%;
-        background: #333;
-        transition: right 0.3s ease;
+    .menu-icon {
+        display: block; /* Show menu icon on smaller screens */
     }
 
-    .navbar .nav-links.active {
-        right: 0;
+    .close-icon.active {
+        display: block; /* Show close icon when menu is active */
     }
 
-    .navbar .menu-icon {
-        display: flex;
+    .navbar .container {
+        position: relative; /* Ensure container doesn't overflow */
     }
 
-    .navbar .close-icon {
-        display: block;
+    .nav-links {
+        display: none; /* Hide nav links by default on smaller screens */
+        flex-direction: column; /* Adjust menu alignment */
         position: absolute;
-        top: 1rem;
-        right: 1rem;
-    }
-
-    .navbar .nav-links li {
-        margin: 1rem 0;
-    }
-
-    .navbar .nav-links a {
-        padding: 1rem;
+        top: 100%;
+        left: 0;
         width: 100%;
+        background-color: #002B5B; /* Adjust background color */
+        padding: 1rem 0;
+        z-index: 999; /* Ensure it's above other content */
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
         text-align: center;
     }
 
-    .navbar .close-icon.active {
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 1rem;
         display: block;
+        transition: color 0.3s ease;
     }
 
-    .navbar .menu-icon.active {
-        display: none;
+    .nav-links a:hover {
+        color: #76C7C0;
     }
 }
-
