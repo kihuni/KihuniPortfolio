@@ -4,78 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script src="https://kit.fontawesome.com/d25f1a26ea.js" crossorigin="anonymous"></script>
     <title>Stephen Kihuni - Backend Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" style="background-color: #002B5B;">
         <div class="container">
             <div class="branding">
                 <img src="Images/new edit.png" alt="Stephen Kihuni" class="profile-img">
                 <div class="brand-text">
-                    <a href="#" class="brand">Stephen Kihuni</a>
-                    <p>Back-end Developer and Technical Writer</p>
+                    <a href="#" class="brand" style="color: #FFFFFF;">Stephen Kihuni</a>
+                    <p style="color: #76C7C0;">Back-end Developer and Technical Writer</p>
                 </div>
             </div>
-            <div class="menu-icon" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+            <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+                <div class="bar" style="background-color: #FFFFFF;"></div>
+                <div class="bar" style="background-color: #FFFFFF;"></div>
+                <div class="bar" style="background-color: #FFFFFF;"></div>
             </div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links" id="nav-links" style="background-color: #002B5B;">
+                <li><a href="#about" style="color: #FFFFFF;">About</a></li>
+                <li><a href="#projects" style="color: #FFFFFF;">Projects</a></li>
+                <li><a href="#blog" style="color: #FFFFFF;">Blog</a></li>
+                <li><a href="#resume" style="color: #FFFFFF;">Resume</a></li>
+                <li><a href="#contact" style="color: #FFFFFF;">Contact</a></li>
             </ul>
-            <div class="close-icon" id="close-icon" onclick="toggleMenu()">&#10005;</div>
+            <div class="close-icon" id="close-icon" onclick="toggleMenu()" style="color: #FFFFFF;">&#10005;</div>
         </div>
     </nav>
 
-    <section id="about" class="about">
+    <section id="about" class="about" style="background-color: #F0F0F0;">
         <div class="container">
-            <h2>About Me</h2>
-            <p>I'm Stephen Kihuni, a backend developer with expertise in Python and Django. In addition to my development skills, I have a strong passion for technical writing. I am committed to continuous learning and skill enhancement, always seeking out new challenges and opportunities to grow both professionally and personally.</p>
-            <h2>Skills</h2>
+            <h2 style="color: #002B5B;">About Me</h2>
+            <p style="color: #333333;">I'm Stephen Kihuni, a backend developer with expertise in Python and Django. In addition to my development skills, I have a strong passion for technical writing. I am committed to continuous learning and skill enhancement, always seeking out new challenges and opportunities to grow both professionally and personally.</p>
+            <h2 style="color: #002B5B;">Skills</h2>
             <div class="skills">
                 <div class="skill">
-                    <h3>Python</h3>
-                    <i class="devicon-python-plain colored"></i>
+                    <h3 style="color: #002B5B;">Python</h3>
+                    <i class="devicon-python-plain colored" style="color: #76C7C0;"></i>
                 </div>
                 <div class="skill">
-                    <h3>Django</h3>
-                    <i class="devicon-django-plain"></i>
+                    <h3 style="color: #002B5B;">Django</h3>
+                    <i class="devicon-django-plain" style="color: #76C7C0;"></i>
                 </div>
                 <div class="skill">
-                    <h3>PostgreSQL</h3>
-                    <i class="devicon-postgresql-plain colored"></i>
+                    <h3 style="color: #002B5B;">PostgreSQL</h3>
+                    <i class="devicon-postgresql-plain colored" style="color: #76C7C0;"></i>
                 </div>
                 <div class="skill">
-                    <h3>Technical Writing</h3>
-                    <i class="fa-solid fa-lightbulb"></i>                </div>
+                    <h3 style="color: #002B5B;">Technical Writing</h3>
+                    <i class="fa-solid fa-lightbulb" style="color: #76C7C0;"></i>
+                </div>
             </div>
         </div>
     </section>
 
-    
-    <section id="projects" class="projects">
+    <section id="projects" class="projects" style="background-color: #FFFFFF;">
         <div class="container">
-            <h2>Projects</h2>
+            <h2 style="color: #002B5B;">Projects</h2>
             <div class="project">
-                <h3>Budget management</h3>
+                <h3 style="color: #002B5B;">Budget Management</h3>
                 <p>A web application for managing personal budget. Key technologies used: Python, Django, SQLite.</p>
-                <a href="https://kihuni.pythonanywhere.com/" target="_blank" >Live Demo</a> | <a href="https://github.com/kihuni/Budget-Management-System">GitHub</a>
+                <a href="Live Demo" target="_blank" style="color: #FF6F61;">Live Demo</a> | <a href="https://github.com/kihuni/Budget-Management-System" style="color: #FF6F61;">GitHub</a>
             </div>
             <div class="project">
-                <h3>Project Management System</h3>
-                <p>A web application for managing personal budget. Key technologies used: Python, Django, SQLite.</p>
-                <a href="#" target="_blank">Live Demo</a> | <a href="https://github.com/kihuni/Project_Management_System" target="_blank">GitHub</a>
+                <h3 style="color: #002B5B;">Project Management System</h3>
+                <p style="color: #333333;">A web application for managing personal budget. Key technologies used: Python, Django, SQLite</p>
+                <a href="Live Demo" target="_blank" style="color: #FF6F61;">Live Demo</a> | <a href="https://github.com/kihuni/Project_Management_System" style="color: #FF6F61;">GitHub</a>
             </div>
             <div class="project">
-                <h3>Project Three</h3>
-                <p>A RESTful API for a task management system. Key technologies used: Python, Django REST Framework, MySQL.</p>
-                <a href="#">Live Demo</a> | <a href="#">GitHub</a>
+                <h3 style="color: #002B5B;">Project Three</h3>
+                <p style="color: #333333;">A RESTful API for a task management system. Key technologies used: Python, Django REST Framework, MySQL.</p>
+                <a href="Live Demo" target="_blank" style="color: #FF6F61;">Live Demo</a> | <a href="#" style="color: #FF6F61;">GitHub</a>
             </div>
         </div>
     </section>
@@ -86,15 +87,15 @@
             <h2>Blog</h2>
             <div class="post">
                 <h3>Comprehensive Guide to Setting Up Django</h3>
-                <p>Setting up Django involves a series of steps to get the framework installed, configured, and ready for development. <a href="https://dev.to/kihuni/comprehensive-guide-to-setting-up-django-3ff5">Read more</a></p>
+                <p>Setting up Django involves a series of steps to get the framework installed, configured, and ready for development. <a href="https://dev.to/kihuni/comprehensive-guide-to-setting-up-django-3ff5" style="color: #76C7C0;">Read more</a></p>
             </div>
             <div class="post">
                 <h3>Django Basics: A Comprehensive Guide</h3>
-                <p>This guide covers the Django app structure, models, views, templates, and URL configuration. <a href="https://dev.to/kihuni/django-basics-a-comprehensive-guide-4dhl">Read more</a></p>
+                <p>This guide covers the Django app structure, models, views, templates, and URL configuration. <a  href="https://dev.to/kihuni/django-basics-a-comprehensive-guide-4dhl" style="color: #76C7C0;">Read more</a></p>
             </div>
             <div class="post">
                 <h3>Learn SQL with PostgreSQL: Building a Budget Tracking Application</h3>
-                <p>In this guide, we'll delve into the world of SQL and PostgreSQL, creating a budget-tracking application from the ground up.<a href="https://dev.to/kihuni/learn-sql-with-postgresql-building-a-budget-tracking-application-4ee6">Read more</a></p>
+                <p>In this guide, we'll delve into the world of SQL and PostgreSQL, creating a budget-tracking application from the ground up.<a href="https://dev.to/kihuni/learn-sql-with-postgresql-building-a-budget-tracking-application-4ee6" style="color: #76C7C0;"> Read more</a></p>
             </div>
         </div>
     </section>
@@ -103,7 +104,7 @@
     <section id="resume" class="resume">
         <div class="container">
             <h2>Resume</h2>
-            <a href="resume.pdf" download>Download My Resume</a>
+            <a href="resume.pdf" download style="background-color: #002B5B;">Download My Resume</a>
         </div>
     </section>
 
@@ -114,11 +115,11 @@
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
+                <button type="submit" style="background-color: #002B5B;">Send Message</button>
             </form>
             <span id="msg"></span>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/kihuni/">LinkedIn</a> | <a href="https://github.com/kihuni">GitHub</a>
+                <a href="https://www.linkedin.com/in/kihuni/" style="color: #76C7C0;">LinkedIn</a> | <a href="https://github.com/kihuni" style="color: #76C7C0;">GitHub</a>
             </div>
         </div>
     </section>
