@@ -6,7 +6,7 @@
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <script src="https://kit.fontawesome.com/d25f1a26ea.js" crossorigin="anonymous"></script>
     <title>Stephen Kihuni - Backend Developer Portfolio</title>
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar" style="background-color: #002B5B;">
@@ -166,23 +166,29 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('http://127.0.0.1:8000/blog/devto_articles/')
-                .then(response => response.json())
-                .then(data => {
-                    const articlesContainer = document.getElementById('articles-container');
-                    data.forEach(article => {
-                        const articleElement = document.createElement('div');
-                        articleElement.classList.add('post'); // Add 'post' class here
-                        articleElement.innerHTML = `
-                            <h3>${article.title}</h3>
-                            <p>${article.description} <a href="${article.url}" target="_blank">Read more</a></p>
-                        `;
-                        articlesContainer.appendChild(articleElement);
-                    });
-                })
-                .catch(error => console.error('Error fetching articles:', error));
-        });
+     document.addEventListener('DOMContentLoaded', () => {
+        fetch('https://kihuni.pythonanywhere.com/blog/devto_articles/')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const articlesContainer = document.getElementById('articles-container');
+                data.forEach(article => {
+                    const articleElement = document.createElement('div');
+                    articleElement.classList.add('post');
+                    articleElement.innerHTML = `
+                        <h3>${article.title}</h3>
+                        <p>${article.description} <a href="${article.url}" target="_blank">Read more</a></p>
+                    `;
+                    articlesContainer.appendChild(articleElement);
+                });
+            })
+            .catch(error => console.error('Error fetching articles:', error));
+});
+
 
     </script>
 </body>
