@@ -6,7 +6,7 @@
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <script src="https://kit.fontawesome.com/d25f1a26ea.js" crossorigin="anonymous"></script>
     <title>Stephen Kihuni - Backend Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
     <nav class="navbar" style="background-color: #002B5B;">
@@ -115,6 +115,22 @@
         </div>
     </section>
 
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form name="submit-to-google-sheet">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" style="background-color: #002B5B;">Send Message</button>
+            </form>
+            <span id="msg"></span>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/kihuni/" style="color: #76C7C0;">LinkedIn</a> | <a href="https://github.com/kihuni" style="color: #76C7C0;">GitHub</a>
+            </div>
+        </div>
+    </section>
+
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzRghEyCpf-uoYUpodIt8Ta_NX2QM8SiS3FVDP1aLuuWMZE8SMknJKNQYXEkhCT7aDxfg/exec'
         const form = document.forms['submit-to-google-sheet']
@@ -150,29 +166,23 @@
             }
         }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        fetch('https://kihuni.pythonanywhere.com/blog/devto_articles/')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const articlesContainer = document.getElementById('articles-container');
-                data.forEach(article => {
-                    const articleElement = document.createElement('div');
-                    articleElement.classList.add('post');
-                    articleElement.innerHTML = `
-                        <h3>${article.title}</h3>
-                        <p>${article.description} <a href="${article.url}" target="_blank">Read more</a></p>
-                    `;
-                    articlesContainer.appendChild(articleElement);
-                });
-            })
-            .catch(error => console.error('Error fetching articles:', error));
-});
-
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('http://127.0.0.1:8000/blog/devto_articles/')
+                .then(response => response.json())
+                .then(data => {
+                    const articlesContainer = document.getElementById('articles-container');
+                    data.forEach(article => {
+                        const articleElement = document.createElement('div');
+                        articleElement.classList.add('post'); // Add 'post' class here
+                        articleElement.innerHTML = `
+                            <h3>${article.title}</h3>
+                            <p>${article.description} <a href="${article.url}" target="_blank">Read more</a></p>
+                        `;
+                        articlesContainer.appendChild(articleElement);
+                    });
+                })
+                .catch(error => console.error('Error fetching articles:', error));
+        });
 
     </script>
 </body>
