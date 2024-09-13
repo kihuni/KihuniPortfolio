@@ -206,38 +206,39 @@
             }
         }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const articlesContainer = document.getElementById('articles-container');
+document.addEventListener('DOMContentLoaded', function() {
+    const articlesContainer = document.getElementById('articles-container');
 
-        // Fetch articles from the Django view (replace 'your-view-url' with your actual view URL)
-        fetch('/your-view-url')
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    articlesContainer.innerHTML = `<p>Error fetching articles: ${data.error}</p>`;
+    // Use the correct endpoint URL for fetching articles
+    fetch('/api/articles/')
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                articlesContainer.innerHTML = `<p>Error fetching articles: ${data.error}</p>`;
+            } else {
+                const articles = data.latest_articles;
+                if (articles.length > 0) {
+                    articles.forEach(article => {
+                        const articleElement = `
+                            <div class="post">
+                                <h3>${article.title}</h3>
+                                <p>${article.description} <a href="${article.url}" target="_blank">Read more</a></p>
+                                ${article.cover_image ? `<img src="${article.cover_image}" alt="${article.title}" style="max-width:100%; height:auto;">` : ''}
+                                <p><small>Reading time: ${article.reading_time_minutes} min</small></p>
+                            </div>
+                        `;
+                        articlesContainer.insertAdjacentHTML('beforeend', articleElement);
+                    });
                 } else {
-                    const articles = data.latest_articles;
-                    if (articles.length > 0) {
-                        articles.forEach(article => {
-                            const articleElement = `
-                                <div class="post">
-                                    <h3>${article.title}</h3>
-                                    <p>${article.description} <a href="${article.url}" target="_blank">Read more</a></p>
-                                    ${article.cover_image ? `<img src="${article.cover_image}" alt="${article.title}" style="max-width:100%; height:auto;">` : ''}
-                                    <p><small>Reading time: ${article.reading_time_minutes} min</small></p>
-                                </div>
-                            `;
-                            articlesContainer.insertAdjacentHTML('beforeend', articleElement);
-                        });
-                    } else {
-                        articlesContainer.innerHTML = `<p>No articles found.</p>`;
-                    }
+                    articlesContainer.innerHTML = `<p>No articles found.</p>`;
                 }
-            })
-            .catch(error => {
-                articlesContainer.innerHTML = `<p>Unable to load articles: ${error.message}</p>`;
-            });
+            }
+        })
+        .catch(error => {
+            articlesContainer.innerHTML = `<p>Unable to load articles: ${error.message}</p>`;
+        });
 });
+
 
     </script>
 </body>
