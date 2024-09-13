@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const articlesContainer = document.getElementById('articles-container');
 
     // Use the correct endpoint URL for fetching articles
-    fetch('/api/articles/')
+    fetch('/blog/articles/')
         .then(response => response.json())
         .then(data => {
             if (data.error) {
