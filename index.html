@@ -122,13 +122,14 @@
     </section>
 
 
-   
     <section id="blog" class="blog">
         <div class="container">
-            <h2>Writing Samples</h2>
+            <h2 style="color: #002B5B;">Blog Posts</h2>
+            
+            <!-- Static Articles -->
             <div class="post">
                 <h3>Comprehensive Guide to Setting Up Django</h3>
-                <p>Setting up Django involves a series of steps to get the framework installed, configured, and ready for development. <a href="https://dev.to/kihuni/comprehensive-guide-to-setting-up-django-3ff5">Read more</a></p>
+                <p>Setting up Django involves a series of steps to get the framework installed and ready for development. <a href="https://dev.to/kihuni/comprehensive-guide-to-setting-up-django-3ff5">Read more</a></p>
             </div>
             <div class="post">
                 <h3>Django Basics: A Comprehensive Guide</h3>
@@ -136,47 +137,16 @@
             </div>
             <div class="post">
                 <h3>Learn SQL with PostgreSQL: Building a Budget Tracking Application</h3>
-                <p>In this guide, we'll delve into the world of SQL and PostgreSQL, creating a budget-tracking application from the ground up.<a href="https://dev.to/kihuni/learn-sql-with-postgresql-building-a-budget-tracking-application-4ee6">Read more</a></p>
+                <p>In this guide, we'll delve into the world of SQL and PostgreSQL, creating a budget-tracking application from the ground up. <a href="https://dev.to/kihuni/learn-sql-with-postgresql-building-a-budget-tracking-application-4ee6">Read more</a></p>
             </div>
-        </div>
-    </section>
-
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2>Full-Stack Development Course</h2>
-            <!-- Container for dynamic articles -->
+    
+            <!-- Dynamic Articles Section -->
+            <h3 style="color: #002B5B; margin-top: 50px;">Latest Articles</h3>
             <div id="articles-container"></div>
         </div>
     </section>
+    
 
-    <section id="course" class="course">
-        <div class="container">
-            <h2>Full-Stack Development Course</h2>
-            <p>This course takes you from the fundamentals of programming to the deployment of your projects, with hands-on projects for each topic. It culminates in a capstone project to showcase your skills.</p>
-            <div class="course-modules">
-                <div class="course-module">
-                    <h3>1. Fundamentals of Programming</h3>
-                    <p>Learn the basics of programming, including variables, control structures, and data types.</p>
-                </div>
-                <div class="course-module">
-                    <h3>2. Backend Development</h3>
-                    <p>Dive into backend development with Python and Django, covering models, views, and REST APIs.</p>
-                </div>
-                <div class="course-module">
-                    <h3>3. Database Management</h3>
-                    <p>Master database management with PostgreSQL, including schema design and SQL queries.</p>
-                </div>
-                <div class="course-module">
-                    <h3>4. Deployment</h3>
-                    <p>Learn the essentials of DevOps, including continuous integration, continuous deployment, and cloud hosting.</p>
-                </div>
-                <div class="course-module">
-                    <h3>5. Capstone Project</h3>
-                    <p>Apply what you've learned in a comprehensive project that demonstrates your skills and expertise.</p>
-                </div>
-            </div>
-        </div>
-    </section>
    
     <section id="resume" class="resume">
         <div class="container">
@@ -236,30 +206,38 @@
             }
         }
 
-// Fetch and display articles dynamically
-document.addEventListener('DOMContentLoaded', () => {
-            fetch('https://kihuni.pythonanywhere.com/blog/devto_articles/')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok ' + response.statusText);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const articlesContainer = document.getElementById('articles-container');
-                    data.forEach(article => {
-                        const articleElement = document.createElement('div');
-                        articleElement.classList.add('post');
-                        articleElement.innerHTML = `
-                            <h3>${article.title}</h3>
-                            <p>${article.description} <a href="${article.url}" target="_blank">Read more</a></p>
-                        `;
-                        articlesContainer.appendChild(articleElement);
-                    });
-                })
-                .catch(error => console.error('Error fetching articles:', error));
-        });
+    document.addEventListener('DOMContentLoaded', function() {
+        const articlesContainer = document.getElementById('articles-container');
 
+        // Fetch articles from the Django view (replace 'your-view-url' with your actual view URL)
+        fetch('/your-view-url')
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    articlesContainer.innerHTML = `<p>Error fetching articles: ${data.error}</p>`;
+                } else {
+                    const articles = data.latest_articles;
+                    if (articles.length > 0) {
+                        articles.forEach(article => {
+                            const articleElement = `
+                                <div class="post">
+                                    <h3>${article.title}</h3>
+                                    <p>${article.description} <a href="${article.url}" target="_blank">Read more</a></p>
+                                    ${article.cover_image ? `<img src="${article.cover_image}" alt="${article.title}" style="max-width:100%; height:auto;">` : ''}
+                                    <p><small>Reading time: ${article.reading_time_minutes} min</small></p>
+                                </div>
+                            `;
+                            articlesContainer.insertAdjacentHTML('beforeend', articleElement);
+                        });
+                    } else {
+                        articlesContainer.innerHTML = `<p>No articles found.</p>`;
+                    }
+                }
+            })
+            .catch(error => {
+                articlesContainer.innerHTML = `<p>Unable to load articles: ${error.message}</p>`;
+            });
+});
 
     </script>
 </body>
