@@ -11,6 +11,16 @@ body {
     margin: auto;
     overflow: hidden;
 }
+p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
 
 .navbar {
     background: #333;
@@ -54,6 +64,10 @@ body {
 .brand-text p {
     margin: 0;
     color: #ddd;
+}
+
+.nav-links.active {
+    transition: all 0.3s ease-in-out;
 }
 
 .navbar .menu-icon {
@@ -109,6 +123,9 @@ h1, h2, h3 {
     min-width: 150px;
     text-align: center;
 }
+.skill i {
+    font-size: 50px; 
+}
 
 .skill img {
     width: 50px;
@@ -137,6 +154,20 @@ h1, h2, h3 {
 .resume a:hover {
     background: #555;
 }
+button, .resume a {
+    background-color: #002B5B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover, .resume a:hover {
+    background-color: #76C7C0;
+}
+
 
 .contact form {
     display: flex;
