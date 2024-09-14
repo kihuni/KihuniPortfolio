@@ -212,7 +212,7 @@
         const articlesContainer = document.getElementById('articles-container');
 
         // Use the correct endpoint URL for fetching articles
-        fetch('/blog/articles/')
+        fetch('https://kihuni.pythonanywhere.com/blog/articles/')
             .then(response => response.json())
             .then(data => {
                 if (data.error) {
