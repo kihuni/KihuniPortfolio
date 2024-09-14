@@ -3,150 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <script src="https://kit.fontawesome.com/d25f1a26ea.js" crossorigin="anonymous"></script>
     <title>Stephen Kihuni - Backend Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="branding">
-                    <img src="Images/new edit.png" alt="Stephen Kihuni" class="profile-img">
-                    <div class="brand-text">
-                        <a href="#" class="brand">Stephen Kihuni</a>
-                        <p>Back-end Developer and Technical Writer</p>
-                    </div>
-                </div>
-                <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#blog">Writing</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="about" class="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>
-                    I'm Stephen Kihuni, a backend developer with over 2 years of experience in Python and Django. I have contributed to open-source projects, mentored others in my local Django community, and I'm passionate about sharing knowledge through technical writing. Currently, I'm expanding my expertise to include Flask, Docker, Redis, and API security (JWT/OAuth), while also learning cloud deployment with platforms like AWS and Heroku. I enjoy taking on new challenges and continuously improving my skillset.
-                </p>
-                
-                <h3>Skills</h3>
-                <div class="skills">
-                    <div class="skill"><i class="devicon-python-plain colored"></i><span>Python</span></div>
-                    <div class="skill"><i class="devicon-django-plain"></i><span>Django</span></div>
-                    <div class="skill"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
-                    <div class="skill"><i class="fa-solid fa-lightbulb"></i><span>Technical Writing</span></div>
-                    <div class="skill"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
-                    <div class="skill"><i class="devicon-flask-original colored"></i><span>Flask</span></div>
-                    <div class="skill"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
-                    <div class="skill"><i class="devicon-github-original colored"></i><span>GitHub Actions</span></div>
-                    <div class="skill"><i class="fa-solid fa-shield-alt"></i><span>API Security</span></div>
-                    <div class="skill"><i class="devicon-amazonwebservices-plain colored"></i><span>AWS / Heroku</span></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="project-grid">
-                    <div class="project">
-                        <h3>An API</h3>
-                        <p>The API is used to fetch my latest articles from a blog on dev.to.</p>
-                        <div class="project-links">
-                            <a href="http://kihuni.pythonanywhere.com/" target="_blank" class="btn">Live Demo</a>
-                            <a href="#" class="btn">GitHub</a>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <h3>Budget Management</h3>
-                        <p>A web application for managing personal budget. Key technologies used: Python, Django, SQLite.</p>
-                        <div class="project-links">
-                            <a href="Live Demo" target="_blank" class="btn">Live Demo</a>
-                            <a href="https://github.com/kihuni/Budget-Management-System" class="btn">GitHub</a>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <h3>Project Management System</h3>
-                        <p>A web application for managing personal budget. Key technologies used: Python, Django, SQLite</p>
-                        <div class="project-links">
-                            <a href="Live Demo" target="_blank" class="btn">Live Demo</a>
-                            <a href="https://github.com/kihuni/Project_Management_System" class="btn">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="blog" class="blog">
-            <div class="container">
-                <h2>Writing Samples</h2>
-                <div class="blog-posts">
-                    <div class="post">
-                        <h3>Comprehensive Guide to Setting Up Django</h3>
-                        <p>Setting up Django involves a series of steps to get the framework installed and ready for development. <a href="https://dev.to/kihuni/comprehensive-guide-to-setting-up-django-3ff5">Read more</a></p>
-                    </div>
-                    <div class="post">
-                        <h3>Django Basics: A Comprehensive Guide</h3>
-                        <p>This guide covers the Django app structure, models, views, templates, and URL configuration. <a href="https://dev.to/kihuni/django-basics-a-comprehensive-guide-4dhl">Read more</a></p>
-                    </div>
-                    <div class="post">
-                        <h3>Learn SQL with PostgreSQL: Building a Budget Tracking Application</h3>
-                        <p>In this guide, we'll delve into the world of SQL and PostgreSQL, creating a budget-tracking application from the ground up. <a href="https://dev.to/kihuni/learn-sql-with-postgresql-building-a-budget-tracking-application-4ee6">Read more</a></p>
-                    </div>
-                </div>
-                
-                <h3>Latest Articles</h3>
-                <div id="articles-container" class="blog-posts"></div>
-            </div>
-        </section>
-
-        <section id="resume" class="resume">
-            <div class="container">
-                <h2>Resume</h2>
-                <a href="resume.pdf" download class="btn">Download My Resume</a>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-                <span id="msg"></span>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/kihuni/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/kihuni" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="https://dev.to/kihuni" target="_blank" class="social-icon"><i class="fab fa-dev"></i></a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
+    <nav class="navbar" style="background-color: #002B5B;">
         <div class="container">
-            <p>&copy; 2024 Stephen Kihuni. All rights reserved.</p>
+            <div class="branding">
+                <img src="Images/new edit.png" alt="Stephen Kihuni" class="profile-img">
+                <div class="brand-text">
+                    <a href="#" class="brand" style="color: #FFFFFF;">Stephen Kihuni</a>
+                    <p style="color: #76C7C0;">Back-end Developer and Technical Writer</p>
+                </div>
+            </div>
+            <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Writing Samples</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="close-icon" id="close-icon" onclick="toggleMenu()">&#10005;</div>
         </div>
-    </footer>
+    </nav>
 
-      <script>
+    
+
+    <section id="about" class="about" style="background-color: #F0F0F0; padding: 50px 0;">
+        <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 15px;">
+            <!-- About Me Section -->
+            <h2 style="color: #002B5B; text-align: center; margin-bottom: 30px;">About Me</h2>
+            <p style="color: #333333; font-size: 18px; line-height: 1.6; text-align: center; margin-bottom: 40px;">
+                I'm Stephen Kihuni, a backend developer with over 2 years of experience in Python and Django. I have contributed to open-source projects, mentored others in my local Django community, and I'm passionate about sharing knowledge through technical writing. Currently, I’m expanding my expertise to include Flask, Docker, Redis, and API security (JWT/OAuth), while also learning cloud deployment with platforms like AWS and Heroku. I enjoy taking on new challenges and continuously improving my skillset.
+            </p>
+    
+            <!-- Skills Section -->
+            <h2 style="color: #002B5B; text-align: center; margin-bottom: 20px;">Skills</h2>
+            <div class="skills" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <!-- Individual Skill -->
+                <div class="skill" style="text-align: center; width: 120px;">
+                    <i class="devicon-python-plain colored" style="font-size: 60px;"></i>
+                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Python</h3>
+                </div>
+    
+                <div class="skill" style="text-align: center; width: 120px;">
+                    <i class="devicon-django-plain" style="font-size: 60px;"></i>
+                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Django</h3>
+                </div>
+    
+                <div class="skill" style="text-align: center; width: 120px;">
+                    <i class="devicon-postgresql-plain colored" style="font-size: 60px;"></i>
+                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">PostgreSQL</h3>
+                </div>
+    
+                <div class="skill" style="text-align: center; width: 120px;">
+                    <i class="fa-solid fa-lightbulb" style="font-size: 60px; color: #FFD700;"></i>
+                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Technical Writing</h3>
+                </div>
+    
+                <div class="skill" style="text-align: center; width: 120px;">
+                    <i class="devicon-docker-plain colored" style="font-size: 60px;"></i>
+                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Docker</h3>
+                </div>
+    
+                <div class="skill" style="text-align: center; width: 120px;">
+                    <i class="devicon-flask-original colored" style="font-size: 60px;"></i>
+                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Flask</h3>
+                </div>
+    
+                <div class="skill" style="text-align: center; width: 120px;">
+                    <i class="devicon-redis-plain colored" style="font-size: 60px;"></i>
+                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Redis</h3>
+                </div>
+    
+                <div class="skill" style="text-align: center; width: 120px;">
+                    <i class="devicon-github-original colored" style="font-size: 60px;"></i>
+                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">GitHub Actions</h3>
+                </div>
+    
+                <div class="skill" style="text-align: center; width: 120px;">
+                    <i class="fa-solid fa-shield-alt" style="font-size: 60px; color: #FF4500;"></i>
+                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">API Security</h3>
+                </div>
+    
+                <div class="skill" style="text-align: center; width: 120px;">
+                    <i class="devicon-amazonwebservices-plain colored" style="font-size: 60px;"></i>
+                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">AWS / Heroku</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="projects" class="projects" style="background-color: #FFFFFF;">
+        <div class="container">
+            <h2 style="color: #002B5B;">Projects</h2>
+             <div class="project">
+                <h3 style="color: #002B5B;">An API</h3>
+                <p style="color: #333333;">The API is used to fetch my latest articles from a blog on dev.to.</p>
+                <a href="http://kihuni.pythonanywhere.com/" target="_blank" style="color: #FF6F61;">Live Demo</a> | <a href="#" style="color: #FF6F61;">GitHub</a>
+            </div>
+            <div class="project">
+                <h3 style="color: #002B5B;">Budget Management</h3>
+                <p>A web application for managing personal budget. Key technologies used: Python, Django, SQLite.</p>
+                <a href="Live Demo" target="_blank" style="color: #FF6F61;">Live Demo</a> | <a href="https://github.com/kihuni/Budget-Management-System" style="color: #FF6F61;">GitHub</a>
+            </div>
+            <div class="project">
+                <h3 style="color: #002B5B;">Project Management System</h3>
+                <p style="color: #333333;">A web application for managing personal budget. Key technologies used: Python, Django, SQLite</p>
+                <a href="Live Demo" target="_blank" style="color: #FF6F61;">Live Demo</a> | <a href="https://github.com/kihuni/Project_Management_System" style="color: #FF6F61;">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 style="color: #002B5B;">Blog Posts</h2>
+            
+            <!-- Static Articles -->
+            <div class="post">
+                <h3>Comprehensive Guide to Setting Up Django</h3>
+                <p>Setting up Django involves a series of steps to get the framework installed and ready for development. <a href="https://dev.to/kihuni/comprehensive-guide-to-setting-up-django-3ff5">Read more</a></p>
+            </div>
+            <div class="post">
+                <h3>Django Basics: A Comprehensive Guide</h3>
+                <p>This guide covers the Django app structure, models, views, templates, and URL configuration. <a href="https://dev.to/kihuni/django-basics-a-comprehensive-guide-4dhl">Read more</a></p>
+            </div>
+            <div class="post">
+                <h3>Learn SQL with PostgreSQL: Building a Budget Tracking Application</h3>
+                <p>In this guide, we'll delve into the world of SQL and PostgreSQL, creating a budget-tracking application from the ground up. <a href="https://dev.to/kihuni/learn-sql-with-postgresql-building-a-budget-tracking-application-4ee6">Read more</a></p>
+            </div>
+    
+            <!-- Dynamic Articles Section -->
+            <h3 style="color: #002B5B; margin-top: 50px;">Latest Articles</h3>
+            <div id="articles-container"></div>
+        </div>
+    </section>
+    
+
+   
+    <section id="resume" class="resume">
+        <div class="container">
+            <h2>Resume</h2>
+            <a href="resume.pdf" download style="background-color: #002B5B;">Download My Resume</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form name="submit-to-google-sheet">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" style="background-color: #002B5B;">Send Message</button>
+            </form>
+            <span id="msg"></span>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/kihuni/" style="color: #76C7C0;">LinkedIn</a> | <a href="https://github.com/kihuni" style="color: #76C7C0;">GitHub</a>| <a href="https://dev.to/kihuni" style="color: #76C7C0;">Dev.to</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzRghEyCpf-uoYUpodIt8Ta_NX2QM8SiS3FVDP1aLuuWMZE8SMknJKNQYXEkhCT7aDxfg/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById('msg')
@@ -185,7 +212,7 @@
         const articlesContainer = document.getElementById('articles-container');
 
         // Use the correct endpoint URL for fetching articles
-        fetch('https://kihuni.pythonanywhere.com/blog/devto_articles/')
+        fetch('/blog/articles/')
             .then(response => response.json())
             .then(data => {
                 if (data.error) {
