@@ -3,270 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <script src="https://kit.fontawesome.com/d25f1a26ea.js" crossorigin="anonymous"></script>
-    <title>Stephen Kihuni - Backend Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav class="navbar" style="background-color: #002B5B;">
-        <div class="container">
-            <div class="branding">
-                <img src="Images/new edit.png" alt="Stephen Kihuni" class="profile-img">
-                <div class="brand-text">
-                    <a href="#" class="brand" style="color: #FFFFFF;">Stephen Kihuni</a>
-                    <p style="color: #76C7C0;">Back-end Developer and Technical Writer</p>
-                </div>
-            </div>
-            <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Writing Samples</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="close-icon" id="close-icon" onclick="toggleMenu()">&#10005;</div>
-        </div>
-    </nav>
-
-    
-
-    <section id="about" class="about" style="background-color: #F0F0F0; padding: 50px 0;">
-        <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 15px;">
-            <!-- About Me Section -->
-            <h2 style="color: #002B5B; text-align: center; margin-bottom: 30px;">About Me</h2>
-            <p style="color: #333333; font-size: 18px; line-height: 1.6; text-align: center; margin-bottom: 40px;">
-                I'm Stephen Kihuni, a backend developer with over 2 years of experience in Python and Django. I have contributed to open-source projects and enjoy teaching Python and Django. Currently, I’m expanding my expertise to include Flask, Docker, Redis, and API security (JWT/OAuth), while also learning cloud deployment with platforms like AWS and Heroku. I enjoy taking on new challenges and continuously improving my skillset.
-            </p>
-    
-            <!-- Skills Section -->
-            <h2 style="color: #002B5B; text-align: center; margin-bottom: 20px;">Skills</h2>
-            <div class="skills" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-                <!-- Individual Skill -->
-                <div class="skill" style="text-align: center; width: 120px;">
-                    <i class="devicon-python-plain colored" style="font-size: 60px;"></i>
-                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Python</h3>
-                </div>
-    
-                <div class="skill" style="text-align: center; width: 120px;">
-                    <i class="devicon-django-plain" style="font-size: 60px;"></i>
-                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Django</h3>
-                </div>
-    
-                <div class="skill" style="text-align: center; width: 120px;">
-                    <i class="devicon-postgresql-plain colored" style="font-size: 60px;"></i>
-                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">PostgreSQL</h3>
-                </div>
-    
-                <div class="skill" style="text-align: center; width: 120px;">
-                    <i class="fa-solid fa-lightbulb" style="font-size: 60px; color: #FFD700;"></i>
-                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Technical Writing</h3>
-                </div>
-    
-                <div class="skill" style="text-align: center; width: 120px;">
-                    <i class="devicon-docker-plain colored" style="font-size: 60px;"></i>
-                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Docker</h3>
-                </div>
-    
-                <div class="skill" style="text-align: center; width: 120px;">
-                    <i class="devicon-flask-original colored" style="font-size: 60px;"></i>
-                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Flask</h3>
-                </div>
-    
-                <div class="skill" style="text-align: center; width: 120px;">
-                    <i class="devicon-redis-plain colored" style="font-size: 60px;"></i>
-                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">Redis</h3>
-                </div>
-    
-                <div class="skill" style="text-align: center; width: 120px;">
-                    <i class="devicon-github-original colored" style="font-size: 60px;"></i>
-                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">GitHub Actions</h3>
-                </div>
-    
-                <div class="skill" style="text-align: center; width: 120px;">
-                    <i class="fa-solid fa-shield-alt" style="font-size: 60px; color: #FF4500;"></i>
-                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">API Security</h3>
-                </div>
-    
-                <div class="skill" style="text-align: center; width: 120px;">
-                    <i class="devicon-amazonwebservices-plain colored" style="font-size: 60px;"></i>
-                    <h3 style="color: #002B5B; font-size: 16px; margin-top: 10px;">AWS / Heroku</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
-    <section id="projects" class="projects" style="background-color: #FFFFFF;">
-        <div class="container">
-            <h2 style="color: #002B5B;">Projects</h2>
-             <div class="project">
-                <h3 style="color: #002B5B;">An API</h3>
-                <p style="color: #333333;">The API is used to fetch my latest articles from a blog on dev.to.</p>
-                <a href="http://kihuni.pythonanywhere.com/" target="_blank" style="color: #FF6F61;">Live Demo</a> | <a href="#" style="color: #FF6F61;">GitHub</a>
-            </div>
-            <div class="project">
-                <h3 style="color: #002B5B;">Budget Management</h3>
-                <p>A web application for managing personal budget. Key technologies used: Python, Django, SQLite.</p>
-                <a href="Live Demo" target="_blank" style="color: #FF6F61;">Live Demo</a> | <a href="https://github.com/kihuni/Budget-Management-System" style="color: #FF6F61;">GitHub</a>
-            </div>
-            <div class="project">
-                <h3 style="color: #002B5B;">Project Management System</h3>
-                <p style="color: #333333;">A web application for managing personal budget. Key technologies used: Python, Django, SQLite</p>
-                <a href="Live Demo" target="_blank" style="color: #FF6F61;">Live Demo</a> | <a href="https://github.com/kihuni/Project_Management_System" style="color: #FF6F61;">GitHub</a>
-            </div>
-        </div>
-    </section>
+    <title>Experience - Stephen Kihuni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
 
 
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2 style="color: #002B5B;">Blog Posts</h2>
-            
-            <!-- Static Articles -->
-            <div class="post">
-                <h3>Comprehensive Guide to Setting Up Django</h3>
-                <p>Setting up Django involves a series of steps to get the framework installed and ready for development. <a href="https://dev.to/kihuni/comprehensive-guide-to-setting-up-django-3ff5">Read more</a></p>
-            </div>
-            <div class="post">
-                <h3>Django Basics: A Comprehensive Guide</h3>
-                <p>This guide covers the Django app structure, models, views, templates, and URL configuration. <a href="https://dev.to/kihuni/django-basics-a-comprehensive-guide-4dhl">Read more</a></p>
-            </div>
-            <div class="post">
-                <h3>Learn SQL with PostgreSQL: Building a Budget Tracking Application</h3>
-                <p>In this guide, we'll delve into the world of SQL and PostgreSQL, creating a budget-tracking application from the ground up. <a href="https://dev.to/kihuni/learn-sql-with-postgresql-building-a-budget-tracking-application-4ee6">Read more</a></p>
-            </div>
-    
-            <!-- Dynamic Articles Section -->
-            <h3 style="color: #002B5B; margin-top: 50px;">Latest Articles</h3>
-            <div id="articles-container"></div>
-        </div>
-    </section>
-    
 
-   
-   
-    <section id="resume" class="resume">
-        <div class="container">
-            <h2>Resume</h2>
-            <div class="resume-content">
-                <h3>Summary</h3>
-                <p>Experienced backend developer with over 2 years of hands-on experience in Python and Django. Skilled in cloud deployment, API security, and open-source contributions.</p>
-    
-                <h3>Experience</h3>
-                <ul>
-                    <li>
-                        <strong>Backend Developer - Freelancing</strong>
-                        <p>Developed RESTful APIs using Django, and managed databases with PostgreSQL.</p>
-                    </li>
-                    <li>
-                        <strong>Open Source Contributor - HNG Internships</strong>
-                        <p>Collaborating with a team of developers to implement features and fix bugs.</p>
-                    </li>
-                </ul>
-    
-                <h3>Skills</h3>
-                <ul>
-                    <li>Python, Django</li>
-                    <li>PostgreSQL, Redis, Docker</li>
-                    <li>API Security (JWT/OAuth)</li>
-                    <li>AWS, Heroku</li>
-                </ul>
-            </div>
-            <a href="resume.pdf" download style="background-color: #002B5B;">Download My Resume</a>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <form name="submit-to-google-sheet">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" style="background-color: #002B5B;">Send Message</button>
-            </form>
-            <span id="msg"></span>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/kihuni/" style="color: #76C7C0;">LinkedIn</a> | <a href="https://github.com/kihuni" style="color: #76C7C0;">GitHub</a>| <a href="https://dev.to/kihuni" style="color: #76C7C0;">Dev.to</a>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzRghEyCpf-uoYUpodIt8Ta_NX2QM8SiS3FVDP1aLuuWMZE8SMknJKNQYXEkhCT7aDxfg/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById('msg')
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST',mode: 'cors', body: new FormData(form)})
-                .then(response => {
-                    msg.innerHTML = "Message sent successfully"
-                    setTimeout(function(){
-                        msg.innerHTML = ""
-                    },5000)
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-        function toggleMenu() {
-            const navLinks = document.getElementById('nav-links');
-            const menuIcon = document.getElementById('menu-icon');
-            const closeIcon = document.getElementById('close-icon');
-
-            // Toggle the active class on navLinks to show/hide it
-            navLinks.classList.toggle('active');
-
-            // Toggle active class on menuIcon and closeIcon based on navLinks state
-            if (navLinks.classList.contains('active')) {
-                menuIcon.style.display = 'none';
-                closeIcon.style.display = 'block';
-            } else {
-                menuIcon.style.display = 'block';
-                closeIcon.style.display = 'none';
-            }
+        .experience {
+            margin-bottom: 100px;
+            margin-top: 100px;
         }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const articlesContainer = document.getElementById('articles-container');
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        .experience-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
 
-        // Use the correct endpoint URL for fetching articles
-        fetch('https://kihuni.pythonanywhere.com/blog/devto_articles/')
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    articlesContainer.innerHTML = `<p>Error fetching articles: ${data.error}</p>`;
-                } else {
-                    const articles = data.latest_articles;
-                    if (articles.length > 0) {
-                        articles.forEach(article => {
-                            const articleElement = `
-                                <div class="post">
-                                    <h3>${article.title}</h3>
-                                    <p>${article.description} <a href="${article.url}" target="_blank">Read more</a></p>
-                                    ${article.cover_image ? `<img src="${article.cover_image}" alt="${article.title}" style="max-width:100%; height:auto;">` : ''}
-                                    <p><small>Reading time: ${article.reading_time_minutes} min</small></p>
-                                </div>
-                            `;
-                            articlesContainer.insertAdjacentHTML('beforeend', articleElement);
-                        });
-                    } else {
-                        articlesContainer.innerHTML = `<p>No articles found.</p>`;
-                    }
-                }
-            })
-            .catch(error => {
-                articlesContainer.innerHTML = `<p>Unable to load articles: ${error.message}</p>`;
-            });
-});
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
 
+        .experience-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd; 
+            border-radius: 8px;
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-role {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company, .experience-dates {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-description {
+            flex-grow: 1;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .certifications {
+            margin-top: 2rem;
+        }
+
+        .certifications-title  {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .certifications-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .certifications-list li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Mobile view adjustments */
+        @media (max-width: 600px) {
+            .experience-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <a href="index.html" class="logo">
+                <img src="/frontend/Images/new edit.png" alt="SK">
+                <span>Stephen Kihuni</span>
+            </a>
+            <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main class="section experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Certifications</h2>
+
+            <h3 class="experience-title">Experience</h3>
+            <div class="experience-grid">
+
+                <div class="experience-card">
+                    <h3 class="experience-role">Backend Developer</h3>
+                    <span class="experience-company">SpaceYatech</span>
+                    <span class="experience-dates">Jan 2024 - Present</span>
+                    <p class="experience-description">
+                        Building RESTful APIs with Django Rest Framework for CoLabs, an open-source platform aims to enhance collaboration by allowing users to list projects and find contributors or financial support.                </div>
+
+                <div class="experience-card">
+                    <h3 class="experience-role">HNG Internship</h3>
+                    <span class="experience-company">HNG</span>
+                    <span class="experience-dates">March 2023 - May 2023</span>
+                    <p class="experience-description">
+                        Collaborating with a team of developers to implement features and fix bugs.
+                    </p>
+                </div>
+            </div>
+
+            
+            
+            <div class="certifications">
+                <h3 class="certifications-title">Certifications</h3>
+                <ul class="certifications-list">
+                    <li><strong>AI Career Essential</strong> - ALX, 9-6-2024</li>
+                    <li><strong>PLPHackathon</strong> - Power Learn Project, 19-09-2014</li>
+                    <li><strong>Fullstack software engineer Transcript</strong> - ALX, 2023</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2024 Stephen Kihuni. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/kihuni" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kihuni/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://dev.to/kihuni" aria-label="Dev.to"><i class="fab fa-dev"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
     </script>
 </body>
 </html>
