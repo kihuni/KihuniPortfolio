@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollabSphere - Collaborative Communication Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #3b82f6;
+            --text-color: #334155;
+            --bg-light: #f1f5f9;
+            --bg-dark: #1e293b;
+            --white: #ffffff;
+            --error-color: #ef4444;
+            --success-color: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Auth Forms */
+        .auth-container {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Chat Interface */
+        .chat-container {
+            display: grid;
+            grid-template-columns: 250px 1fr 250px;
+            gap: 1rem;
+            height: calc(100vh - 64px);
+            padding: 1rem;
+        }
+
+        .rooms-sidebar {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .room-list {
+            list-style: none;
+        }
+
+        .room-item {
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .room-item:hover {
+            background-color: var(--bg-light);
+        }
+
+        .room-item.active {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .chat-main {
+            background: var(--white);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .message.sent {
+            background-color: var(--accent-color);
+            color: var(--white);
+            margin-left: auto;
+            max-width: 70%;
+        }
+
+        .message.received {
+            background-color: var(--bg-light);
+            max-width: 70%;
+        }
+
+        .chat-input {
+            padding: 1rem;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Online Users Sidebar */
+        .users-sidebar {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .user-list {
+            list-style: none;
+        }
+
+        .user-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+
+        .user-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--success-color);
+        }
+
+        .typing-indicator {
+            color: var(--text-color);
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .chat-container {
+                grid-template-columns: 1fr;
+            }
+
+            .rooms-sidebar,
+            .users-sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-brand">CollabSphere</div>
+        <div class="nav-menu">
+            <a href="#" class="nav-link">Dashboard</a>
+            <a href="#" class="nav-link">Profile</a>
+            <a href="#" class="nav-link">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Main Chat Interface -->
+    <div class="chat-container">
+        <!-- Rooms Sidebar -->
+        <div class="rooms-sidebar">
+            <h3>Chat Rooms</h3>
+            <button class="btn" style="margin: 1rem 0;">Create Room</button>
+            <ul class="room-list">
+                <li class="room-item active"># General</li>
+                <li class="room-item"># Development</li>
+                <li class="room-item"># Marketing</li>
+                <li class="room-item private">
+                    <i class="fas fa-lock"></i> Private Room
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-main">
+            <div class="chat-header">
+                <h2># General</h2>
+                <div class="room-info">
+                    <i class="fas fa-users"></i> 24 members
+                </div>
+            </div>
+            <div class="chat-messages">
+                <div class="message received">
+                    <strong>John Doe</strong>
+                    <p>Hey team! How's the new feature coming along?</p>
+                    <small>10:30 AM</small>
+                </div>
+                <div class="message sent">
+                    <p>Almost done with the implementation. Will push the changes soon!</p>
+                    <small>10:32 AM ✓✓</small>
+                </div>
+            </div>
+            <div class="typing-indicator">John is typing...</div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button class="btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Online Users Sidebar -->
+        <div class="users-sidebar">
+            <h3>Online Users</h3>
+            <ul class="user-list">
+                <li class="user-item">
+                    <span class="user-status"></span>
+                    John Doe
+                </li>
+                <li class="user-item">
+                    <span class="user-status"></span>
+                    Jane Smith
+                </li>
+                <li class="user-item">
+                    <span class="user-status" style="background-color: #9ca3af;"></span>
+                    Mike Johnson (Away)
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
