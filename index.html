@@ -22,6 +22,45 @@
     box-sizing: border-box;
 }
 
+     /* Preloader Styles */
+     #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 6px solid var(--bg-light);
+            border-top: 6px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Hide Preloader after Load */
+        body.loaded #preloader {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-in-out;
+        }
+
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
@@ -555,6 +594,11 @@ body {
 
 </head>
 <body>
+
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
     <header class="header">
         <nav class="container nav">
             <a href="index.html" class="logo">
@@ -641,10 +685,12 @@ body {
     </footer>
 
     <script>
-        // function toggleMenu() {
-        //     const navLinks = document.querySelector('.nav-links');
-        //     navLinks.classList.toggle('active');
-        // }
+           
+        // Wait for the page to load
+        window.addEventListener("load", () => {
+            document.body.classList.add("loaded");
+        });
+   
 
          // Toggle mobile menu
          function toggleMenu() {
